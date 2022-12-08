@@ -29,7 +29,7 @@ router.post('/login', async (req, res) => {
   try {
     const dbUserData = await User.findOne({
       where: {
-      //change this base on what Fritz wants to have as
+      //use email to find user
         email: req.body.email,
       },
     });
