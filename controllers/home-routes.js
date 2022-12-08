@@ -4,17 +4,9 @@ const { Gallery, Painting } = require('../models');
 // Homepage
 router.get('/', async (req, res) => {
   try {
-  if(window.screen.width > 650){
-
-    res.render('mainLarge', {
+    res.render('homepage', {
       loggedIn: req.session.loggedIn,
     });
-  }
-    else {
-      res.render('mainSmall', {
-        loggedIn: req.session.loggedIn,
-      });
-    }
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
