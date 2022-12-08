@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Graphical Reservation</title>
+  <style src="/css/styleSmall.css"></style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <a href="/" class="button1">Home</a>
+      {{#if loggedIn}}
+      <img id="userimg" src="{{userimg}}">
+      <button id="logout" class="btn-no-style">Logout</button>
+      {{else}}
+      <img id="logo" src="/images/logo.png">
+      <a href="/login" class="button1">Login</a>
+      {{/if}}
+    </nav>
+  </header>
+
+  <main>
+    <div class="pageDisplay">
+      {{{body}}}
+    </div>
+  </main>
+
+  <footer>
+    {{#if loggedIn}}
+      <img id="logoblock" src="smallLogo.png">
+    {{/if}}
+    <p>Created by XYZ</p>
+  </footer>
+  <script src="/js/mainSmall.css"></script>
+</body>
+</html>
