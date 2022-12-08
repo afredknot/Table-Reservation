@@ -6,6 +6,9 @@ router.post('/', async (req, res) => {
   try {
     const dbUserData = await User.create({
       username: req.body.username,
+      first_name: req.body.first_name,
+      last_name: req.body.last_name,  
+      phone: req.body.phone,
       email: req.body.email,
       password: req.body.password,
     });
@@ -26,6 +29,7 @@ router.post('/login', async (req, res) => {
   try {
     const dbUserData = await User.findOne({
       where: {
+      //change this base on what Fritz wants to have as
         email: req.body.email,
       },
     });
