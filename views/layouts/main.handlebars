@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Graphical Reservation</title>
-  <style src="/css/styleSmall.css"></style>
+  <style src="/Table-Reservation/public/css/styleSmall.css"></style>
 </head>
 
 <body>
@@ -14,7 +14,7 @@
       <a href="/" class="button1">Home</a>
       {{#if loggedIn}}
       <img id="userimg" src="{{userimg}}">
-      <button id="logout" class="btn-no-style">Logout</button>
+      <a href="/logout" class="button1">Logout</a>
       {{else}}
       <img id="logo" src="/images/logo.png">
       <a href="/login" class="button1">Login</a>
