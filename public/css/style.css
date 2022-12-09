@@ -169,7 +169,7 @@ footer{
   background-color: var(--light);
   color: var(--dark);
 }
-
+/*  ----------------------------------------------*/
 .login-card {
   margin: 0 0 20px 0;
   flex: 0 0 50%;
