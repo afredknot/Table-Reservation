@@ -1,13 +1,48 @@
 const User = require('./User');
-const Gallery = require('./Gallery');
-const Painting = require('./Painting');
+const DiningTable = require('./DiningTable');
+const Restaurant = require('./Restaurant');
+const Reservation = require('./Reservation');
 
-Gallery.hasMany(Painting, {
-  foreignKey: 'gallery_id',
+// User.hasMany(Reservation, {
+//   foreignKey: 'user_id',
+// });
+
+// Reservation.belongsTo(User, {
+//   foreignKey: 'restaurant_id',
+// });
+
+
+Restaurant.hasMany(DiningTable, {
+  foreignKey: 'restaurant_id',
+  onDelete: 'CASCADE',
 });
 
-Painting.belongsTo(Gallery, {
-  foreignKey: 'gallery_id',
+DiningTable.belongsTo(Restaurant, {
+  foreignKey: 'restaurant_id',
 });
 
-module.exports = { User, Gallery, Painting };
+DiningTable.hasMany(Reservation, {
+  foreignKey: 'reservation_id',
+});
+
+Reservation.belongsTo(DiningTable, {
+  foreignKey: 'reservation_id',
+});
+
+Restaurant.belongsTo(Reservation, {
+  through: {
+    model: DiningTable,
+    unique: false
+  },
+  as: 'restaurant_reservation'
+});
+
+Reservation.belongsTo(Restaurant, {
+  through: {
+    model: DiningTable,
+    unique: false
+  },
+  as: 'reservation_restaurant'
+});
+
+module.exports = { User, DiningTable, Restaurant, Reservation };
