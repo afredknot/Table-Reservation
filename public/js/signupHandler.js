@@ -27,7 +27,7 @@ function handleSubmit(e) {
         passOne.focus();
     };
 
-    fetch("/api/users/new", {
+    fetch("/api/users/", {
         method: "POST",
         body: JSON.stringify(data),
         headers: {"Content-Type": 'application/json'}
