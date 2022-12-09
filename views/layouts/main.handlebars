@@ -5,31 +5,33 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Graphical Reservation</title>
-  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/styleSmall.css"/>
 </head>
 
 <body>
   <header>
     <nav>
       {{#if loggedIn}}
-      <a href="/" class="button1">Home</a>
+      <a href="/" class="button1">Home</a> 
       <img id="userimg" src="{{userimg}}">
-      <a id="logout" class="button1">Logout</a>
+      <a href="/logout" class="button1">Logout</a>
       {{else}}
-      <h1>Graphical Reservation</h1>
+      <img id="logo" src="/images/logo.png">
       <a href="/login" class="button1">Login</a>
       {{/if}}
     </nav>
   </header>
 
   <main>
-    {{{body}}}
+    <div class="pageDisplay">
+      {{{body}}}
+    </div>
   </main>
 
   <footer>
-    <!-- {{#if loggedIn}}
+    {{#if loggedIn}}
       <img id="logoblock" src="smallLogo.png">
-    {{/if}} -->
+    {{/if}}
     <p>Created by XYZ</p>
   </footer>
 </body>
