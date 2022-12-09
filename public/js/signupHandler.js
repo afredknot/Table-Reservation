@@ -11,10 +11,10 @@ function handleSubmit(e) {
     e.preventDefault();
 
     const data = {
-        firstName: fName.value.trim(),
-        lastName: lName.value.trim(),
+        first_name: fName.value.trim(),
+        last_name: lName.value.trim(),
         email: email.value.trim().toLowerCase(),
-        phoneNumber: phoneNum.value,
+        phone_number: phoneNum.value,
         password: ""
     };
 
