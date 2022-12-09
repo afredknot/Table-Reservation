@@ -27,5 +27,16 @@ router.post('/', async (req, res) => {
     }
   });
 
+// route to get all restaurant
+router.get('/', async (req, res) => {
+    try {
+      const restaurantData = await Restaurant.findAll();
+      res.status(200).json(restaurantData);
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
   module.exports = router;
+
+
   
