@@ -53,6 +53,8 @@ nav {
 }
 
 .login-card {
+  justify-content: center;
+  align-items: center;
   margin: 0 0 20px 0;
   flex: 0 0 50%;
   max-width: 50%;
