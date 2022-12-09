@@ -1,17 +1,30 @@
-<div>
-    <div class="heroContainer">
-        <img src="/images/hero.png">
+<div class="heroContainer">
+    <div class="bottomLayer">
+        <img class="heroOne" src="TableThree.jpg">
     </div>
-
-    {{#if loggedIn}}
-    <input type="text" placeholder="Find a Restaurant...">
-    {{else}}
-    <a href="/signup" class="button1">Sign Up</a>
-    {{/if}}
-
-    <h2>About:</h2>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic neque placeat architecto ut incidunt eius totam officia, delectus, est quidem voluptas reiciendis at commodi quibusdam blanditiis sapiente, aspernatur illo pariatur cum molestiae accusamus molestias cumque explicabo. Deserunt aperiam at incidunt consectetur reprehenderit. Iure quae excepturi voluptatem quisquam, culpa voluptatum consectetur corporis cum? Id nisi tenetur facilis, eligendi voluptatem harum quas?</p>
-
-    <h2>How to:</h2>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt odit, ab, assumenda magnam alias vitae explicabo corrupti excepturi sed perferendis exercitationem accusamus culpa reiciendis dolorem doloribus ex soluta dicta quidem perspiciatis iste ipsa tempora ipsum iure consequuntur. Cumque, eaque distinctio esse alias nobis facilis amet minima. Dolore at eos fugit!</p>
+    <div class="topLayer">
+    <!-- {{#if loggedIn}}
+            <input type="text" placeholder="Find a Restaurant...">
+        {{else}} -->
+            <a href="/signup" class="button1">Sign Up</a>
+    <!-- {{/if}} -->
+    </div>
 </div>
+
+<card>
+    <div class="inner">
+        <h2>About:</h2>
+        <p>Our team works with restaurants to make the reservation process easy! Each location has a floor plan laid out
+            so you can choose exactly where you want to sit. Book dirrectly through us and manage your reservation
+            through your account.</p>
+    </div>
+</card>
+
+<card class="right">
+    <div class="inner">
+        <h2>How to:</h2>
+        <p>Log in or create an account with us by following the link above. After logging in you're able to search for
+            participating restaurants, view their tables availible for reservation and make requests for whichever table
+            looks best!</p>
+    </div>
+</card>
