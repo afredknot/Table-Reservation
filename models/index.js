@@ -3,14 +3,13 @@ const DiningTable = require('./DiningTable');
 const Restaurant = require('./Restaurant');
 const Reservation = require('./Reservation');
 
-// User.hasMany(Reservation, {
-//   foreignKey: 'user_id',
-// });
+User.hasMany(Reservation, {
+  foreignKey: 'user_id',
+});
 
-// Reservation.belongsTo(User, {
-//   foreignKey: 'restaurant_id',
-// });
-
+Reservation.belongsTo(User, {
+  foreignKey: 'user_id',
+});
 
 Restaurant.hasMany(DiningTable, {
   foreignKey: 'restaurant_id',
