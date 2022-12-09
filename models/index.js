@@ -13,7 +13,7 @@ Reservation.belongsTo(User, {
 
 Restaurant.hasMany(DiningTable, {
   foreignKey: 'restaurant_id',
-  onDelete: 'CASCADE',
+  // onDelete: 'CASCADE',
 });
 
 DiningTable.belongsTo(Restaurant, {

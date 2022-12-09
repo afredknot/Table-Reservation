@@ -27,10 +27,6 @@ Restaurant.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    image_link: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
     menu_link: {
       type: DataTypes.STRING,
       allowNull: false,
