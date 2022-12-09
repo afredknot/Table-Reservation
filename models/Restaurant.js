@@ -1,50 +1,59 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Painting extends Model {}
+class Restaurant extends Model {}
 
-Painting.init(
+Restaurant.init(
   {
-    id: {
+    restaurant_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
     },
-    title: {
+    name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    artist: {
+    image_link: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    exhibition_date: {
-      type: DataTypes.DATE,
+    address: {
+      type: DataTypes.STRING,
       allowNull: false,
     },
-    filename: {
+    phone: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    image_link: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    menu_link: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    hours: {
       type: DataTypes.STRING,
       allowNull: false,
     },
     description: {
-      type: DataTypes.STRING,
+      type: DataTypes.DATE,
       allowNull: false,
     },
-    gallery_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'gallery',
-        key: 'id',
-      },
+    floorplan_filepath: {
+      type: DataTypes.STRING,
+      allowNull: false,
     },
   },
   {
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'painting',
+    modelName: 'restaurant',
   }
 );
 
-module.exports = Painting;
+module.exports = Restaurant;
