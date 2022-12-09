@@ -1,0 +1,200 @@
+:root {
+  --primary: #50736c;
+  --secondary: #86938f;
+  --tertiary: #6d938c;
+  --quatrinary: #979384;
+  --light: #e3e4e3;
+  --highlight: rgba(255, 255, 255, 0.5);
+  --shadow:  rgba(34, 34, 34, 0.877);
+  --dark: #182c23;
+  --error: rgb(228, 46, 1);
+  --border-radius: 0.3rem;
+}
+
+body {
+  font-family: Arial;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: flex-start;
+  background-color: var(--quatrinary);
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+aside {
+  flex: 0;
+  background-color: var(--tertiary);
+  padding: 80px;
+  text-align: left;
+  color: var(--light);
+}
+
+h1{
+  color: var(--light)
+}
+
+/* NAVBAR STUFF */
+
+nav {
+  display: flex;
+  padding: 15px 0 15px 0;
+  background-color: var(--secondary);
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: thick double var(--light);
+}
+
+nav a.button1, a.button1 {
+  display: inline-block;
+  padding: 0.5em 3em;
+  border: 0.16em solid #b7cce6;
+  margin: 0 0.3em 0.3em 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: 'Roboto',sans-serif;
+  font-weight: 400;
+  color: #dde2e7;
+  text-align: center;
+  transition: all 0.15s;
+  background-color: var(--shadow);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+a.button1{
+  justify-content: center;
+  align-items: center;
+  display:block;
+  margin:0.4em auto;
+ }
+ 
+a.button1:hover{
+  color:#DDDDDD;
+  border-color:#DDDDDD;
+  }
+
+a.button1:active{
+  color:#BBBBBB; 
+  border-color:#BBBBBB;
+  }
+
+/* HERO SECTION */
+
+.heroContainer{
+  display: grid;
+  width: 100%;
+  height: auto;
+  padding: 10px 0 10px 0;
+}
+
+.topLayer, .bottomLayer{
+  display: flex;
+  grid-column: 1;
+  grid-row: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+.heroOne{
+  max-width: 98%;
+  height: auto;
+  border: 5px inset var(--secondary);
+  box-sizing: border-box;
+}
+
+/* ABOUT APP CARDS */
+
+card {
+  width: 98%;
+  height: 45vh;
+  position: relative;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  border: 5px inset var(--secondary);
+  margin-bottom: 20px;
+  background-image: url("https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80");
+  background-size: cover;
+  background-position: center;
+}
+
+card h2 {
+  margin: 0%;
+}
+
+.right {
+  justify-content: right;
+  background-image: url("https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80");
+}
+
+.inner {
+  height: 85%;
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--shadow);
+  box-sizing: border-box;
+  border-radius: 10%;
+  padding: 15px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  color: var(--light);
+  text-align: center;
+  font-size: 1.25vw;
+}
+
+/* FOOTER */
+
+footer{
+  text-align: center;
+}
+
+/* SIGNUP CARDS */
+
+.card {
+  margin: 20px;
+  flex: 0 1 300px;
+  border: 7px double var(--dark);
+  border-radius: 10px;
+  background-color: var(--light);
+  color: var(--dark);
+}
+
+.login-card {
+  margin: 0 0 20px 0;
+  flex: 0 0 50%;
+  max-width: 50%;
+  padding: 5px;
+  border: 3px solid var(--dark);
+  border-radius: var(--border-radius);
+  border-style: double;
+  border-width: thick;
+  background-color: #577a7c;
+  color: var(--light);
+}
+
+.card header {
+  color: var(--light);
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 0;
+  background-color: var(--tertiary);
+  padding: 0.625rem;
+  border-radius: calc(0.18rem - 1px) calc(0.18rem - 1px) 0 0;
+}
+
+.card-body {
+  font-size: 1.4rem;
+  text-align: center;
+  font-weight: bold;
+}
