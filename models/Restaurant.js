@@ -40,7 +40,7 @@ Restaurant.init(
       allowNull: false,
     },
     description: {
-      type: DataTypes.DATE,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     floorplan_filepath: {
