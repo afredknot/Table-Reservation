@@ -15,7 +15,7 @@ const loginFormHandler = async (event) => {
       });
 
       if (response.ok) {
-        return document.location.replace('/');
+        document.location.replace('/');
       };
     }
     catch(err) {
