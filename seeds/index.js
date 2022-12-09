@@ -2,6 +2,7 @@ const sequelize = require('../config/connection');
 const seedDiningTable = require('./diningTableData');
 const seedRestaurant = require('./restaurantData');
 const seedUser = require('./userData');
+const seedReservations = require('./reservationsData');
 
 const seedAll = async () => {
   await sequelize.sync({ force: true });
@@ -12,6 +13,7 @@ const seedAll = async () => {
 
   await seedUser();
 
+  await seedReservations();
 
   process.exit(0);
 };
