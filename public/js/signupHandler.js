@@ -34,6 +34,7 @@ function handleSubmit(e) {
     })
     .then((response) => {
         if(response.status == 200) {
+            document.location.replace('/');
             alert("Account Creation Successful.");
         } else {
             errorEl.innerHTML = `Error: Code ${response.status}.`
