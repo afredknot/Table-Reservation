@@ -33,15 +33,13 @@ function handleSubmit(e) {
         headers: {"Content-Type": 'application/json'}
     })
     .then((response) => {
-        console.log(response);
         if(response.status == 200) {
-            console.log("inside")
-            document.location.replace('/');
             alert("Account Creation Successful.");
+            return document.location.replace('/');
         } else {
             errorEl.innerHTML = `Error: Code ${response.status}.`
         };
-    });
+    })
 }
 
 signup.addEventListener("click", handleSubmit)

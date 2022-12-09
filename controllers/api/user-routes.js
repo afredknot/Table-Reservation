@@ -73,7 +73,23 @@ router.post('/logout', (req, res) => {
   }
 });
 
-//logout fetch 
-
+//Get one user
+router.get('/:id', async (req, res) => {
+  try {
+    const dbUserData = await User.findOne({
+      where: {
+      //use email to find user
+        email: req.body.email,
+      },
+    });
+    if (!dbUserData) {
+      res.status(404).json({ message: 'No user with this id' });
+      return;
+    }
+    res.status(200).json(dbUserData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 module.exports = router;
