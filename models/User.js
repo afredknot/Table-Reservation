@@ -16,16 +16,11 @@ User.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    username: {
-      type: DataTypes.STRING,
-      unique: true,
-      allowNull: false,
-    },
     first_name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    first_name: {
+    last_name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -36,6 +31,11 @@ User.init(
       validate: {
         isEmail: true,
       },
+    },
+    phone_number: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      unique: false,
     },
     password: {
       type: DataTypes.STRING,
