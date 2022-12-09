@@ -6,9 +6,10 @@ class Reservation extends Model {}
 Reservation.init(
   {
     reservation_id: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
+      autoIncrement:true,
     },
     restaurant_id: {
       type: DataTypes.INTEGER,
