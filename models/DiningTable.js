@@ -9,6 +9,7 @@ DiningTable.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
+      autoIncrement:true,
     },
     restaurant_table_ref: {
       type: DataTypes.INTEGER,
