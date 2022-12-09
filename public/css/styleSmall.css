@@ -16,7 +16,9 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  justify-content: flex-start;
+  align-self:center;
+  justify-content: center;
+  text-align: center;
   background-color: var(--quatrinary);
 }
 
@@ -96,12 +98,14 @@ nav a.button1, a.button1 {
   color: #dde2e7;
   text-align: center;
   transition: all 0.15s;
+  justify-content:center;
+  align-items:center;
 }
- a.button1{
+ /* a.button1{
   justify-content: center;
   align-items: center;
  }
- 
+  */
 a.button1:hover{
   color:#DDDDDD;
   border-color:#DDDDDD;
