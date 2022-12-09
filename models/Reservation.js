@@ -31,7 +31,7 @@ Reservation.init(
       },
     },
     date_time: {
-      type: DataTypes.STRING,
+      type: DataTypes.DATE,
       allowNull: false,
     },
   },
