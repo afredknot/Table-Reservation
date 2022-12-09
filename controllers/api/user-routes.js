@@ -76,12 +76,17 @@ router.post('/logout', (req, res) => {
 //Get one user
 router.get('/:id', async (req, res) => {
   try {
-    const userData = await User.findByPk(req.params.id);
-    if (!userData) {
+    const dbUserData = await User.findOne({
+      where: {
+      //use email to find user
+        email: req.body.email,
+      },
+    });
+    if (!dbUserData) {
       res.status(404).json({ message: 'No user with this id' });
       return;
     }
-    res.status(200).json(userData);
+    res.status(200).json(dbUserData);
   } catch (err) {
     res.status(500).json(err);
   }
