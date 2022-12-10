@@ -24,6 +24,29 @@ router.post('/', async (req, res) => {
   }
 });
 
+// Get Reservation by ID
+router.get('/:reservation_id', async (req, res) => {
+  try {
+
+    const reservationData = await Reservation.findOne(
+      {
+        where:{reservation_id: req.params.reservation_id}, 
+        include: [ 
+          {model: User, attributes: ['first_name', 'last_name']},
+          {model: Restaurant, attributes: ['name']},
+          {model: DiningTable, attributes: ['restaurant_table_ref']},
+        ]
+      }
+    );    
+  
+    const reservation = reservationData.get({ plain: true });
+
+    res.status(200).json(reservation);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;
 
 
