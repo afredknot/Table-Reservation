@@ -1,7 +1,7 @@
 
 const router = require('express').Router();
-const { Restaurant } = require('../../models');
-
+const { Restaurant, Reservation, DiningTable, User } = require('../../models');
+, DiningTable
 // CREATE new Restaurant
 router.post('/', async (req, res) => {
     try {
@@ -38,7 +38,7 @@ router.get('/', async (req, res) => {
   });
 
 
-  // Get restaurant by ID (with all restaurants)
+  // Get restaurant by ID 
   router.get('/:restaurant_id', async (req, res) => {
     try {
 
@@ -63,6 +63,28 @@ router.get('/', async (req, res) => {
       res.status(500).json(err);
     }
   });
+
+  //  Get table by ID
+  router.get('/table/:dining_table_id', async (req, res) => {
+    try {
+
+      const diningTableData = await DiningTable.findOne(
+        {
+          where:{dining_table_id: req.params.dining_table_id}, 
+          include: [{model: Restaurant}, {model: Reservation}]
+          
+        }
+      );    
+    
+      const diningTable = diningTableData.get({ plain: true });
+
+      res.status(200).json(diningTable);
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
+  module.exports = router;
+
 
 
   module.exports = router;
