@@ -1,7 +1,6 @@
 
 const router = require('express').Router();
-const { Restaurant, DiningTable } = require('../../models');
-
+const { Restaurant } = require('../../models');
 
 // CREATE new Restaurant
 router.post('/', async (req, res) => {
@@ -40,25 +39,4 @@ router.get('/', async (req, res) => {
   module.exports = router;
 
 
-  // TODO: Get restaurant by ID
-  router.get('/:restaurant_id', async (req, res) => {
-    try {
-      console.log('You are Here!')
-      const restaurantData = await Restaurant.findByPK(req.params.restaurant_id, {
-        // include: [
-        //   {
-        //     model: DiningTable,
-        //     attributes: ['restaurant_table_ref', 'num_seats'],
-        //   },
-        // ],
-
-    });
-      console.log(restaurantData)
-      const restaurant = restaurantData.get({ plain: true });
-      console.log(restaurant)
-      res.status(200).json(restaurant);
-    } catch (err) {
-      res.status(500).json(err);
-    }
-  });
-  module.exports = router;
+  
