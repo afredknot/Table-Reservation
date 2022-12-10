@@ -18,10 +18,10 @@ DiningTable.init(
     restaurant_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      references: {
-        model: 'restaurant',
-        key: 'restaurant_id',
-      },
+      // references: {
+      //   model: 'restaurant',
+      //   key: 'restaurant_id',
+      // },
     },
     num_seats: {
       type: DataTypes.INTEGER,

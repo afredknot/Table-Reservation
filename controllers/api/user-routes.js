@@ -7,7 +7,7 @@ router.post('/', async (req, res) => {
     const dbUserData = await User.create({
       first_name: req.body.first_name,
       last_name: req.body.last_name,  
-      phone_number: req.body.phone_number,
+      phone: req.body.phone,
       email: req.body.email,
       password: req.body.password,
     });
@@ -73,23 +73,7 @@ router.post('/logout', (req, res) => {
   }
 });
 
-//Get one user
-router.get('/:id', async (req, res) => {
-  try {
-    const dbUserData = await User.findOne({
-      where: {
-      //use email to find user
-        email: req.body.email,
-      },
-    });
-    if (!dbUserData) {
-      res.status(404).json({ message: 'No user with this id' });
-      return;
-    }
-    res.status(200).json(dbUserData);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+//logout fetch 
+
 
 module.exports = router;
