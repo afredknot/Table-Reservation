@@ -1,8 +1,6 @@
 
 const path = require('path');
 const express = require('express');
-
-// const seed = require('./seeds/index')
 // Import express-session
 const exphbs = require('express-handlebars');
 const routes = require('./controllers');
@@ -10,7 +8,6 @@ const helpers = require('./utils/helpers');
 
 const sequelize = require('./config/connection');
 const session = require('express-session');
-// const seedAll = require('./seeds/index');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const app = express();
@@ -47,5 +44,4 @@ app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
-
 });
