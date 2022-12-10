@@ -36,6 +36,35 @@ router.get('/', async (req, res) => {
       res.status(500).json(err);
     }
   });
+
+
+  // Get restaurant by ID (with all restaurants)
+  router.get('/:restaurant_id', async (req, res) => {
+    try {
+
+      const restaurantData = await Restaurant.findOne(
+        {
+        where:{restaurant_id: req.params.restaurant_id},
+        include: [
+          {
+            model: DiningTable,
+            attributes: ['restaurant_table_ref', 'num_seats'],
+          },
+          {
+            model: Reservation,
+            attributes: ['date_time', 'dining_table_id']
+          },
+        ],
+
+    });
+      const restaurant = restaurantData.get({ plain: true });
+      res.status(200).json(restaurant);
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
+
+
   module.exports = router;
 
 
