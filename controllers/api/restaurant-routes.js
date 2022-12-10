@@ -1,7 +1,7 @@
 
 const router = require('express').Router();
 const { Restaurant, Reservation, DiningTable, User } = require('../../models');
-, DiningTable
+
 // CREATE new Restaurant
 router.post('/', async (req, res) => {
     try {
