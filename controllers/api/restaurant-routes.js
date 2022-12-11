@@ -43,22 +43,23 @@ router.get('/', async (req, res) => {
   // TODO: Get restaurant by ID
   router.get('/:restaurant_id', async (req, res) => {
     try {
-      console.log('You are Here!')
-      const restaurantData = await Restaurant.findByPK(req.params.restaurant_id, {
-        // include: [
-        //   {
-        //     model: DiningTable,
-        //     attributes: ['restaurant_table_ref', 'num_seats'],
-        //   },
-        // ],
+      const dbRestaurantData = await Restaurant.findOne({
+        where: {
+          restaurant_id: req.params.restaurant_id
+        }
 
-    });
-      console.log(restaurantData)
-      const restaurant = restaurantData.get({ plain: true });
-      console.log(restaurant)
-      res.status(200).json(restaurant);
+      });
+      if (!dbRestaurantData) {
+        res.status(404).json({ message: 'No user with this id!' });
+        return;
+      }
+      console.log(dbRestaurantData)
+      // const restaurant = dbRestaurantData.get({ plain: true });
+      // console.log(restaurant)
+      res.status(200).json(dbRestaurantData);
     } catch (err) {
       res.status(500).json(err);
     }
   });
+
   module.exports = router;
