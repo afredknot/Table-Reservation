@@ -28,20 +28,12 @@ Reservation.belongsTo(DiningTable, {
   foreignKey: 'reservation_id',
 });
 
-Restaurant.belongsTo(Reservation, {
-  through: {
-    model: DiningTable,
-    unique: false
-  },
-  as: 'restaurant_reservation'
+Restaurant.hasMany(Reservation, {
+  foreignKey: 'restaurant_id',
 });
 
 Reservation.belongsTo(Restaurant, {
-  through: {
-    model: DiningTable,
-    unique: false
-  },
-  as: 'reservation_restaurant'
+  foreignKey: 'reservation_id',
 });
 
 module.exports = { User, DiningTable, Restaurant, Reservation };
