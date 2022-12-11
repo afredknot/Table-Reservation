@@ -37,7 +37,6 @@ router.get('/', async (req, res) => {
     }
   });
 
-
   // Get restaurant by ID 
   router.get('/:restaurant_id', async (req, res) => {
     try {
@@ -64,6 +63,23 @@ router.get('/', async (req, res) => {
     }
   });
 
+// Get floorplan by restautrant ID 
+  router.get('reserve/:restaurant_id', async (req, res) => {
+    try {
+
+      const restaurantData = await Restaurant.findOne(
+        {
+        where:{restaurant_id: req.params.restaurant_id},
+
+    });
+      const restaurant = restaurantData.get({ plain: true });
+      
+      res.status(200).json(restaurant);
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
+
   //  Get table by ID
   router.get('/table/:dining_table_id', async (req, res) => {
     try {
@@ -84,5 +100,6 @@ router.get('/', async (req, res) => {
     }
   });
   module.exports = router;
+
 
   

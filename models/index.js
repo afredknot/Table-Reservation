@@ -28,7 +28,6 @@ Reservation.belongsTo(DiningTable, {
   foreignKey: 'reservation_id',
 });
 
-
 Restaurant.hasMany(Reservation, {
   foreignKey: 'restaurant_id',
 });
