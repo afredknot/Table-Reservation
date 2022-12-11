@@ -14,7 +14,7 @@
       {{#if loggedIn}}
       <a href="/" class="button1">Home</a>
       <img id="userimg" src="{{userimg}}">
-      <a href="/logout" class="button1">Logout</a>
+         <button id="logout" type="submit">Logout</button>
       {{else}}
       <h1>Graphical Reservation</h1>
       <a href="/login" class="button1">Login</a>
@@ -33,5 +33,8 @@
     <p>Created by XYZ</p>
   </footer>
 </body>
+{{#if loggedIn}}
+<script src="/js/logout.js"></script>
+{{/if}}
 
 </html>

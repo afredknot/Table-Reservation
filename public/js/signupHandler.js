@@ -1,10 +1,10 @@
-const signupForm = document.querySelector("#submitForm");
-const fName = document.querySelector("#firstName");
-const lName = document.querySelector("#lastName");
-const email = document.querySelector("#email");
-const phoneNum = document.querySelector("#phoneNum");
-const passOne = document.querySelector("#passOne");
-const passTwo = document.querySelector("#passTwo");
+const signup = document.querySelector("#submit");
+const fName = document.querySelector("#firstName-signup");
+const lName = document.querySelector("#lastName-signup");
+const email = document.querySelector("#email-signup");
+const phoneNum = document.querySelector("#phone-signup");
+const passOne = document.querySelector("#passOne-signup");
+const passTwo = document.querySelector("#passTwo-signup");
 const errorEl = document.querySelector("#errorText");
 
 function handleSubmit(e) {
@@ -19,7 +19,7 @@ function handleSubmit(e) {
     };
 
     if(passOne.value == passTwo.value) {
-        body.password = passOne.value;
+        data.password = passOne.value;
     } else {
         errorEl.innerHTML = "Error: Your passwords must match!";
         passOne.value = "";
@@ -27,19 +27,19 @@ function handleSubmit(e) {
         passOne.focus();
     };
 
-    fetch("/api/users/new", {
+    fetch("/api/users/", {
         method: "POST",
         body: JSON.stringify(data),
         headers: {"Content-Type": 'application/json'}
     })
     .then((response) => {
         if(response.status == 200) {
-            document.location.replace('/');
             alert("Account Creation Successful.");
+            return document.location.replace('/');
         } else {
             errorEl.innerHTML = `Error: Code ${response.status}.`
         };
-    });
+    })
 }
 
-signupForm.on("submit", handleSubmit)
+signup.addEventListener("click", handleSubmit)

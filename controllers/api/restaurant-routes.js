@@ -1,6 +1,6 @@
 
 const router = require('express').Router();
-const { Restaurant } = require('../../models');
+const { Restaurant, Reservation, DiningTable, User } = require('../../models');
 
 // CREATE new Restaurant
 router.post('/', async (req, res) => {
@@ -100,8 +100,6 @@ router.get('/', async (req, res) => {
     }
   });
   module.exports = router;
-
-
 
 
   
