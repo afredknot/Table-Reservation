@@ -51,6 +51,7 @@ router.post('/login', async (req, res) => {
 
     req.session.save(() => {
       req.session.loggedIn = true;
+      req.session.user = dbUserData.user_id;
 
       res
         .status(200)
@@ -73,7 +74,30 @@ router.post('/logout', (req, res) => {
   }
 });
 
-//logout fetch 
 
+
+
+// GET reservation by user ID
+router.get('/reservations/:user_id', async (req, res) => {
+  try {
+
+    const reservationData = await Reservation.findAll(
+      {
+        where:{user_id: req.params.user_id}, 
+        include: [ 
+          {model: User, attributes: ['first_name', 'last_name']},
+          {model: Restaurant, attributes: ['name']},
+          {model: DiningTable, attributes: ['restaurant_table_ref']},
+        ]
+      }
+    );    
+  
+    const reservation = reservationData.map((reservation) => reservation.get({ plain: true }));
+
+    res.status(200).json(reservation);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 module.exports = router;
