@@ -76,12 +76,11 @@ router.post('/logout', (req, res) => {
 
 
 //Get one user
-router.get('/:id', async (req, res) => {
+router.get('/profile', async (req, res) => {
   try {
     const dbUserData = await User.findOne({
       where: {
-      //use email to find user
-        email: req.body.email,
+        user_id: req.session.user,
       },
     });
     if (!dbUserData) {
@@ -113,6 +112,15 @@ router.get('/reservations/:user_id', async (req, res) => {
     const reservation = reservationData.map((reservation) => reservation.get({ plain: true }));
 
     res.status(200).json(reservation);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/', async (req, res) => {
+  try {
+    const userData = await User.findAll();
+    res.status(200).json(userData);
   } catch (err) {
     res.status(500).json(err);
   }
