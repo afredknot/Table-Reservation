@@ -76,12 +76,11 @@ router.post('/logout', (req, res) => {
 
 
 //Get one user
-router.get('/:id', async (req, res) => {
+router.get('/profile', async (req, res) => {
   try {
     const dbUserData = await User.findOne({
       where: {
-      //use email to find user
-        email: req.body.email,
+        user_id: req.session.user,
       },
     });
     if (!dbUserData) {
