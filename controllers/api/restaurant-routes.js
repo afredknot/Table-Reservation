@@ -36,7 +36,72 @@ router.get('/', async (req, res) => {
       res.status(500).json(err);
     }
   });
+
+  // Get restaurant by ID 
+  router.get('/:restaurant_id', async (req, res) => {
+    try {
+
+      const restaurantData = await Restaurant.findOne(
+        {
+        where:{restaurant_id: req.params.restaurant_id},
+        include: [
+          {
+            model: DiningTable,
+            attributes: ['restaurant_table_ref', 'num_seats'],
+          },
+          {
+            model: Reservation,
+            attributes: ['date_time', 'dining_table_id']
+          },
+        ],
+
+    });
+      const restaurant = restaurantData.get({ plain: true });
+      res.status(200).json(restaurant);
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
+
+// Get floorplan by restautrant ID 
+  router.get('reserve/:restaurant_id', async (req, res) => {
+    try {
+
+      const restaurantData = await Restaurant.findOne(
+        {
+        where:{restaurant_id: req.params.restaurant_id},
+
+    });
+      const restaurant = restaurantData.get({ plain: true });
+      
+      res.status(200).json(restaurant);
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
+
+  //  Get table by ID
+  router.get('/table/:dining_table_id', async (req, res) => {
+    try {
+
+      const diningTableData = await DiningTable.findOne(
+        {
+          where:{dining_table_id: req.params.dining_table_id}, 
+          include: [{model: Restaurant}, {model: Reservation}]
+          
+        }
+      );    
+    
+      const diningTable = diningTableData.get({ plain: true });
+
+      res.status(200).json(diningTable);
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
   module.exports = router;
+
+
 
 
   
