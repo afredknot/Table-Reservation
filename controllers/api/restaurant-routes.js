@@ -27,11 +27,11 @@ router.post('/', async (req, res) => {
     }
   });
 
-// route to get all restaurant
+// route to get all restaurants
 router.get('/', async (req, res) => {
     try {
-      const restaurantData = await Restaurant.findAll();
-      res.status(200).json(restaurantData);
+      const dbRestaurantData = await Restaurant.findAll();
+      res.status(200).json(dbRestaurantData);
     } catch (err) {
       res.status(500).json(err);
     }
