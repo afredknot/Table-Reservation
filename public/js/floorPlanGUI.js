@@ -1,8 +1,40 @@
-const map = document.querySelector("#floorPlan");
+const position = { x: 0, y: 0, scale: 0 }
 
-function handleTables(event) {
-    
-}
+interact('.draggable').draggable({
+  listeners: {
+    start (event) {
+      console.log(event.type, event.target)
+    },
+    move (event) {
+      position.x += event.dx
+      position.y += event.dy
+
+      event.target.style.transform =
+        `translate(${position.x}px, ${position.y}px)`
+    }},
+  modifiers: [
+    interact.modifiers.restrict({
+      restriction: 'parent'
+    })
+  ]
+})
+
+// ---------------------
 
 
-map.addEventListener("click", handleTables);
+const zoomable = document.querySelector(".draggable");
+let zoom = 1;
+const speed = 0.15;
+
+document.addEventListener("wheel", (e) => {
+  if (e.deltaY > 0) {
+    zoomable.style.transform = `scale(${(zoom += speed)})`;
+  } else {
+    zoomable.style.transform = `scale(${(zoom -= speed)})`;
+  }
+});
+
+
+// ----------------
+
+document.querySelector(".table").addEventListener("click", () => console.log("clicked"))
