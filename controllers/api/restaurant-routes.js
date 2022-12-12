@@ -84,6 +84,7 @@ router.get('/search/:restaurant', async (req, res) => {
 
     });
       const restaurant = restaurantData.get({ plain: true });
+      
       res.status(200).render('restaurantdetails', {restaurant});
     } catch (err) {
       res.status(500).json(err);
@@ -124,7 +125,8 @@ router.get('/search/:restaurant', async (req, res) => {
         {
         where:{restaurant_id: req.params.restaurant_id},
 
-    });
+      });
+  
       const restaurant = restaurantData.get({ plain: true });
 
       const floorplanFilepath = restaurant.floorplan_filepath

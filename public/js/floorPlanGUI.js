@@ -39,11 +39,11 @@
 
 
 
-let tables = document.querySelector("#svg5")
+// let tables = document.querySelector("#svg5")
 
-tables.addEventListener("click", (e) => {
-  modal.style.display = "block";
-  console.log(e.target.id)
+// tables.addEventListener("click", (e) => {
+//   modal.style.display = "block";
+//   console.log(e.target.id)
   
   
-});
+// });
