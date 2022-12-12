@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const { Gallery, Painting } = require('../models');
 
 // Homepage
 router.get('/', async (req, res) => {

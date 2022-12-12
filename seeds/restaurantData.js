@@ -10,7 +10,7 @@ const restaurantdata = [
     hours:'11AM - 10PM',
     category:'Pizza',
     description: 'We Make and Sell Good Pizza',
-    floorplan_filepath: 'PIZZAFLOORPLAN.svg',
+    floorplan_filepath: 'floorplanOne.txt',
   },
   {
     name: `Burgers 'N Beer`,
