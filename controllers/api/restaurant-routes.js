@@ -87,7 +87,7 @@ router.get('/search/:restaurant', async (req, res) => {
   });
 
 // Get floorplan by restautrant ID 
-  router.get('reserve/:restaurant_id', async (req, res) => {
+  router.get('/reserve/:restaurant_id', async (req, res) => {
     try {
 
       const restaurantData = await Restaurant.findOne(
