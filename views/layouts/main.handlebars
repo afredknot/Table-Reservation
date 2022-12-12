@@ -11,10 +11,58 @@
 <body>
   <header>
     <nav>
-      {{#if loggedIn}}
-      <a href="/" class="button1">Home</a>
-      <img id="userimg" src="{{userimg}}">
+      {{#if loggedIn}}<button class="dropbtn" onclick="myFunction()">Menu<i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-content" id="myDropdown">
+   <a href="/" class="button1">Home</a>
+      
          <button id="logoutBtn" type="submit">Logout</button>
+      <a href="/profile" class="button1">Profile</a>
+ </div>
+  </div>
+  <img id="userimg" src="{{userimg}}">
+  <button id="myBtn">Check your Reservations</button>
+<div id="myModal" class="modal">
+
+   <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Graphical Reservation</h2>
+    </div>
+    <div class="modal-body">
+      <p>Choose from your favorites:</p>
+
+<form>
+  <input type="radio" id="pizza" name="fav_resturant" value="HTML">
+  <label for="html">pizza pizza</label><br>
+  <input type="radio" id="css" name="fav_resturant" value="CSS">
+  <label for="css">Burgers 'N Beer</label><br>
+  <input type="radio" id="javascript" name="fav_resturant" value="JavaScript">
+  <label for="javascript">Wanna TACO bout it</label>
+</form><form action="/action_page.php" method="get">
+  <label for="fname">First name:</label>
+  <input type="text" id="fname" name="fname"><br><br>
+  <label for="lname"><div class="dropdown">
+  <button class="dropbtn" onclick="myFunction()">Dropdown
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-content" id="myDropdown">
+    <a href="/tableselect">Link 1</a>
+    <a href="/resturantdetails">Link 2</a>
+  </div>
+  </div> </label>
+ 
+  
+</div>
+  <input type="submit" formmethod="post" value="update reservation">
+</form>
+    </div>
+    <div class="modal-footer">
+      <h3>thanks for choosing us for you reservation needs</h3>
+    </div>
+  </div>
+</div>
+         
       {{else}}
       <h1>Graphical Reservation</h1>
       <a href="/login" class="button1">Login</a>
@@ -35,6 +83,7 @@
 </body>
 {{#if loggedIn}}
 <script src="/js/logout.js"></script>
+<script src="js/modalHandler.js"></script>
 {{/if}}
 
 </html>
