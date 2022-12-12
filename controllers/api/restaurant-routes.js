@@ -1,6 +1,7 @@
 
 const router = require('express').Router();
 const { Restaurant, Reservation, DiningTable, User } = require('../../models');
+const sequelize = require('sequelize')
 
 // CREATE new Restaurant
 router.post('/', async (req, res) => {
@@ -29,8 +30,30 @@ router.post('/', async (req, res) => {
 
 // route to get all restaurants
 router.get('/', async (req, res) => {
+  try {
+    const dbRestaurantData = await Restaurant.findAll()
+
+
+    res.status(200).json(dbRestaurantData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+  // route to get all restaurants
+router.get('/search/:restaurant', async (req, res) => {
     try {
-      const dbRestaurantData = await Restaurant.findAll();
+      const dbRestaurantData = await Restaurant.findAll({
+
+
+      where: {
+        name: {
+          [sequelize.Op.like]: `%${req.params.restaurant}%`,
+        },
+      },
+      order: [sequelize.literal(`name = '${req.params.restaurant}' desc, length(name)`)]
+   })
+  
       res.status(200).json(dbRestaurantData);
     } catch (err) {
       res.status(500).json(err);
