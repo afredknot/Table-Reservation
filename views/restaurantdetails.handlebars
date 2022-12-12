@@ -1,14 +1,13 @@
 <div>
-  <img src='{{restImage}}' />
+    <img src="{{restaurant.image_link}}">
 
-  <h2>{{restName}}</h2>
+    <h2>{{restaurant.name}}</h2>
 
-  <p>{{restDesc}}</p>
+    <p>{{restaurant.description}}</p>
 
-  <a href='{{restMenu}}'>Veiw Menu</a>
+    <a href="{{restaurant.menu_link}}">Veiw Menu</a>
 
-  <p>{{restHours}}</p>
+    <p>{{restaurant.hours}}</p>
 
-  <a href='/reserve/{{restID}}'>Reserve a Table</a>
-
+    <a href="reserve/{{restaurant.restaurant_id}}">Reserve a Table</a>
 </div>
