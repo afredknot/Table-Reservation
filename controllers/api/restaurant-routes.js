@@ -1,6 +1,8 @@
 
 const router = require('express').Router();
 const { Restaurant, Reservation, DiningTable, User } = require('../../models');
+const fs = require('fs');
+const floorplanFolder = 'db/floorplans';
 const sequelize = require('sequelize')
 
 // CREATE new Restaurant
@@ -99,9 +101,11 @@ router.get('/search/:restaurant', async (req, res) => {
 
       const floorplanFilepath = restaurant.floorplan_filepath
       
-      console.log(floorplanFilepath);
+      const floorplan = fs.readFileSync(`${floorplanFolder}/${floorplanFilepath}`, 'utf8');
 
-      res.status(200).json(floorplanFilepath);
+      console.log(floorplan);
+
+      res.status(200).json(floorplan);
     } catch (err) {
       res.status(500).json(err);
     }
