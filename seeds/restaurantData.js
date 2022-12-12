@@ -10,7 +10,7 @@ const restaurantdata = [
     hours:'11AM - 10PM',
     category:'Pizza',
     description: 'We Make and Sell Good Pizza',
-    floorplan_filepath: 'floorplanOne.txt',
+    floorplan_filepath: 'PIZZAFLOORPLAN.txt',
   },
   {
     name: `Burgers 'N Beer`,
@@ -21,7 +21,7 @@ const restaurantdata = [
     hours:'1PM - 12AM',
     category:'Burgers',
     description: `Slingin' Sammies and Brews`,
-    floorplan_filepath: 'BURGERFLOORPLAN.svg',
+    floorplan_filepath: 'BURGERFLOORPLAN.txt',
   },
   {
     name: `Wanna TACO bout it?`,
@@ -32,7 +32,7 @@ const restaurantdata = [
     hours:'9AM - 9PM',
     category:'Mexican',
     description: `Delivering delicious tacos and burritos since 1999.`,
-    floorplan_filepath: 'TACOFLOORPLAN.svg',
+    floorplan_filepath: 'TACOFLOORPLAN.txt',
   },
   {
     name: `Tacos. Tortas. Tequila.`,
@@ -43,7 +43,7 @@ const restaurantdata = [
     hours:'10AM - 1AM',
     category:'Mexican',
     description: `Where every day is Taco Tuesday!`,
-    floorplan_filepath: 'TTTFLOORPLAN.svg',
+    floorplan_filepath: 'TTTFLOORPLAN.txt',
   },
 ];
 

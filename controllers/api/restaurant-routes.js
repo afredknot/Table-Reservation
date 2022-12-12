@@ -2,7 +2,6 @@
 const router = require('express').Router();
 const { Restaurant, Reservation, DiningTable, User } = require('../../models');
 const fs = require('fs');
-const floorplanFolder = 'db/floorplans';
 const sequelize = require('sequelize')
 
 // CREATE new Restaurant
@@ -42,7 +41,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-  // route to get all restaurants
+  // GET route for search results
 router.get('/search/:restaurant', async (req, res) => {
     try {
       const dbRestaurantData = await Restaurant.findAll({
@@ -130,7 +129,7 @@ router.get('/search/:restaurant', async (req, res) => {
 
       const floorplanFilepath = restaurant.floorplan_filepath
       
-      const floorplan = fs.readFileSync(`${floorplanFolder}/${floorplanFilepath}`, 'utf8');
+      const floorplan = fs.readFileSync(`db/floorplans/${floorplanFilepath}`, 'utf8');
 
       console.log(floorplan);
 

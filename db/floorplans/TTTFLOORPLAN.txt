@@ -1,0 +1,171 @@
+<svg width="190.43744mm" height="123.94595mm" viewBox="0 0 190.43744 123.94595" id="svg3015">
+  <g id="layer1" transform="translate(-11.983487,-6.8212626)">
+    <rect
+       style="fill-opacity:0"
+       id="outline"
+       width="188.93744"
+       height="120.45191"
+       x="12.733487"
+       y="7.5712628" />
+    <rect
+       id="table1"
+       width="11.194082"
+       height="13.749252"
+       x="25.673384"
+       y="8.8822613" />
+    <rect
+       id="table2"
+       width="11.194082"
+       height="13.749252"
+       x="52.806866"
+       y="8.8214235" />
+    <rect
+       id="table3"
+       width="11.194082"
+       height="13.749252"
+       x="80.305374"
+       y="8.9430981" />
+    <rect
+       id="table4"
+       width="11.194082"
+       height="13.749252"
+       x="124.72572"
+       y="113.08552" />
+    <rect
+       id="table5"
+       width="11.194082"
+       height="13.749252"
+       x="97.339844"
+       y="112.97506" />
+    <rect
+       id="table6"
+       width="11.194082"
+       height="13.749252"
+       x="69.963013"
+       y="112.91422" />
+    <rect
+       id="table7"
+       width="11.194082"
+       height="13.749252"
+       x="42.755798"
+       y="112.97502" />
+    <ellipse
+       id="table8"
+       cx="31.072409"
+       cy="42.292431"
+       rx="6.8137889"
+       ry="6.5704393" />
+    <ellipse
+       id="table9"
+       cx="65.339371"
+       cy="42.342831"
+       rx="6.8137889"
+       ry="6.5704393" />
+    <ellipse
+       id="table10"
+       cx="31.208847"
+       cy="68.102249"
+       rx="6.8137889"
+       ry="6.5704393" />
+    <ellipse
+       id="table11"
+       cx="65.582718"
+       cy="68.137894"
+       rx="6.8137889"
+       ry="6.5704393" />
+    <ellipse
+       id="table12"
+       cx="97.704865"
+       cy="68.137894"
+       rx="6.8137889"
+       ry="6.5704393" />
+    <ellipse
+       id="table13"
+       cx="97.948219"
+       cy="94.176292"
+       rx="6.8137889"
+       ry="6.5704393" />
+    <ellipse
+       id="table14"
+       cx="65.704399"
+       cy="93.932953"
+       rx="6.8137889"
+       ry="6.5704393" />
+    <ellipse
+       id="table15"
+       cx="31.131454"
+       cy="93.96859"
+       rx="6.8137889"
+       ry="6.5704393" />
+    <path
+       d="M 111.08909,7.6655127 V 36.867465 l 33.94728,26.03841 H 201.8585 V 7.7871875 Z"
+       id="path7497" />
+    <rect
+       id="rect7503"
+       width="44.654655"
+       height="21.658115"
+       x="156.96049"
+       y="74.343307" />
+    <text
+       xml:space="preserve"
+       style="font-size:7.76111px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+       x="161.0614"
+       y="61.430473"
+       id="text8287">
+        <tspan
+         sodipodi:role="line"
+         id="tspan8285"
+         style="font-size:7.76111px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1;stroke-dasharray:none"
+         x="161.0614"
+         y="61.430473">Kitchen
+        </tspan>
+    </text>
+    <text
+       xml:space="preserve"
+       style="font-size:7.7611px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+       x="160.54518"
+       y="94.124565"
+       id="text9067">
+        <tspan
+         sodipodi:role="line"
+         id="tspan9065"
+         style="stroke-width:1"
+         x="160.54518"
+         y="94.124565">Bathroom
+        </tspan>
+    </text>
+    <rect
+       style="fill:#ffffff;fill-opacity:1;"
+       id="rect10574"
+       width="18.251221"
+       height="3.8935938"
+       x="121.07251"
+       y="-41.873543"
+       rx="2.6756592"
+       ry="0.3335"
+       transform="rotate(38.317815)" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;"
+       id="rect10574-1"
+       width="24.79388"
+       height="4.7605577"
+       x="173.95787"
+       y="124.92038"
+       rx="3.634824"
+       ry="0.4077585"
+       transform="matrix(0.99998949,0.00458537,-0.00566067,0.99998398,0,0)" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;"
+       id="rect10574-3"
+       width="10.029893"
+       height="2.4725561"
+       x="161.70287"
+       y="73.370728"
+       rx="1.4703991"
+       ry="0.21178311"
+       transform="matrix(0.99999929,-0.00118924,8.9060777e-4,0.9999996,0,0)" />
+    <path
+       d="m 157.792,127.8511 0.17208,-18.75609 z"
+       id="path10678" />
+    </g>
+  </svg>
