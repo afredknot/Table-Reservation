@@ -7,6 +7,10 @@ var btn = document.getElementById("myBtn");
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
+var slider = document.getElementById("myRange");
+var output = document.getElementById("customer_id");
+output.innerHTML = slider.value; 
+// / Display the default slider value
 // When the user clicks on the button, open the modal
 btn.onclick = function() {
   modal.style.display = "block";
@@ -27,7 +31,9 @@ window.onclick = function(event) {
 function myFunction() {
   document.getElementById("myDropdown").classList.toggle("show");
 }
-
+slider.oninput = function() {
+  output.innerHTML = this.value;
+}
 // Close the dropdown if the user clicks outside of it
 window.onclick = function(e) {
   if (!e.target.matches('.dropbtn')) {

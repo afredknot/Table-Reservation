@@ -1,6 +1,8 @@
 
 const router = require('express').Router();
 const { Restaurant, Reservation, DiningTable, User } = require('../../models');
+const fs = require('fs');
+const floorplanFolder = 'db/floorplans';
 const sequelize = require('sequelize')
 
 // CREATE new Restaurant
@@ -83,14 +85,40 @@ router.get('/search/:restaurant', async (req, res) => {
 
     });
       const restaurant = restaurantData.get({ plain: true });
-      res.status(200).json(restaurant);
+      res.status(200).render('restaurantdetails', {restaurant});
     } catch (err) {
       res.status(500).json(err);
     }
   });
 
+ // Get restaurant data by ID 
+ router.get('/:restaurant_id/data', async (req, res) => {
+  try {
+
+    const restaurantData = await Restaurant.findOne(
+      {
+      where:{restaurant_id: req.params.restaurant_id},
+      include: [
+        {
+          model: DiningTable,
+          attributes: ['restaurant_table_ref', 'num_seats'],
+        },
+        {
+          model: Reservation,
+          attributes: ['date_time', 'dining_table_id']
+        },
+      ],
+
+  });
+    const restaurant = restaurantData.get({ plain: true });
+    res.status(200).json(restaurant);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 // Get floorplan by restautrant ID 
-  router.get('reserve/:restaurant_id', async (req, res) => {
+  router.get('/reserve/:restaurant_id', async (req, res) => {
     try {
 
       const restaurantData = await Restaurant.findOne(
@@ -99,8 +127,14 @@ router.get('/search/:restaurant', async (req, res) => {
 
     });
       const restaurant = restaurantData.get({ plain: true });
+
+      const floorplanFilepath = restaurant.floorplan_filepath
       
-      res.status(200).json(restaurant);
+      const floorplan = fs.readFileSync(`${floorplanFolder}/${floorplanFilepath}`, 'utf8');
+
+      console.log(floorplan);
+
+      res.status(200).render('tableselect', {floorplan});
     } catch (err) {
       res.status(500).json(err);
     }
