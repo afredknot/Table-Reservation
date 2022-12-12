@@ -1,3 +1,5 @@
+let selectedTable = 0;
+
 // Get the modal
 var modal = document.getElementById("myModal");
 
@@ -9,17 +11,16 @@ var span = document.getElementsByClassName("close")[0];
 
 var slider = document.getElementById("myRange");
 var output = document.getElementById("customer_id");
-output.innerHTML = slider.value; 
+// output.innerHTML = slider.value; 
 // / Display the default slider value
 // When the user clicks on the button, open the modal
-btn.onclick = function() {
-  modal.style.display = "block";
-}
+
+const submitReso = document.getElementById('submit')
 
 // When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
+// span.onclick = function() {
+//   modal.style.display = "none";
+// }
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
@@ -28,12 +29,12 @@ window.onclick = function(event) {
   }
 }
 
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
-slider.oninput = function() {
-  output.innerHTML = this.value;
-}
+// function myFunction() {
+//   document.getElementById("myDropdown").classList.toggle("show");
+// }
+// slider.oninput = function() {
+//   output.innerHTML = this.value;
+// }
 // Close the dropdown if the user clicks outside of it
 window.onclick = function(e) {
   if (!e.target.matches('.dropbtn')) {
@@ -43,3 +44,40 @@ window.onclick = function(e) {
     }
   }
 }
+
+
+// When the user clicks on the button, open the modal
+let tables = document.querySelector("#svg5")
+
+tables.addEventListener("click", (e) => {
+  
+  
+  
+  modal.style.display = "block";
+  selectedTable = Number(e.target.id);
+});
+
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  const response = await fetch('/api/reservations/', {
+    method: 'POST',
+    body: JSON.stringify({ 
+    restaurant_id: 1,
+    dining_table_id: selectedTable,
+    num_guests: Number(slider.value),
+    date_time: '2022-12-15' 
+  }),
+    headers: { 'Content-Type': 'application/json' },
+  });
+
+  if (response.status == 200) {
+    return document.location.replace('/');
+  } else {
+    alert('Failed to make a reservation.');
+  }
+}
+
+submitReso.addEventListener("click", handleSubmit)
+
