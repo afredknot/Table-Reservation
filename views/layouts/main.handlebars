@@ -11,10 +11,21 @@
 <body>
   <header>
     <nav>
-      {{#if loggedIn}}
-      <a href="/" class="button1">Home</a>
-      <img id="userimg" src="{{userimg}}">
-         <button id="logoutBtn" type="submit">Logout</button>
+      {{#if loggedIn}}<button class="dropbtn" onclick="myFunction()">Menu<i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-content" id="myDropdown">
+  <li><a href="/" class="button1">Home</a>
+  </li> 
+  <li><button id="logoutBtn" type="submit">Logout</button></li>
+  <li><a href="/profile" class="button1">Profile</a>
+  </li>
+ </div>
+
+  <img id="userimg" src="{{userimg}}">
+
+   
+    
+    
       {{else}}
       <h1>Graphical Reservation</h1>
       <a href="/login" class="button1">Login</a>
@@ -35,6 +46,7 @@
 </body>
 {{#if loggedIn}}
 <script src="/js/logout.js"></script>
+<script src="js/modalHandler.js"></script>
 {{/if}}
 
 </html>
