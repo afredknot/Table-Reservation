@@ -1,5 +1,4 @@
-
-`<svg width="190.43744mm" height="123.94595mm" viewBox="0 0 190.43744 123.94595" id="svg3015">
+<svg width="190.43744mm" height="123.94595mm" viewBox="0 0 190.43744 123.94595" id="svg3015">
   <g id="layer1" transform="translate(-11.983487,-6.8212626)">
     <rect
        style="fill-opacity:0"
