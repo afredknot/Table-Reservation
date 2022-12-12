@@ -53,8 +53,11 @@ router.get('/search/:restaurant', async (req, res) => {
       },
       order: [sequelize.literal(`name = '${req.params.restaurant}' desc, length(name)`)]
    })
-  
-      res.status(200).json(dbRestaurantData);
+
+    const results = dbRestaurantData.map((data) => data.get({ plain: true }));
+    console.log(results);
+    
+      res.render("search", { results });
     } catch (err) {
       res.status(500).json(err);
     }

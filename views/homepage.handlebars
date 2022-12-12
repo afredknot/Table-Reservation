@@ -4,7 +4,10 @@
     </div>
     <div class="topLayer">
      {{#if loggedIn}}
-            <input type="text" placeholder="Find a Restaurant...">
+            <p id="searchErr"></p>
+            <input id="searchBar" type="text" placeholder="Find a Restaurant...">
+            <button id="searchBtn">Search</button>
+            <script src="/js/searchHandler.js"></script>
         {{else}} 
             <a href="/signup" class="button1">Sign Up</a>
      {{/if}} 
