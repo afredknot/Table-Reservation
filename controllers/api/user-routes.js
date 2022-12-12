@@ -87,7 +87,7 @@ router.get('/profile', async (req, res) => {
       res.status(404).json({ message: 'No user with this id' });
       return;
     }
-    res.status(200).json(dbUserData);
+    res.status(200).render('profile', {dbUserData});
   } catch (err) {
     res.status(500).json(err);
   }
