@@ -7,27 +7,27 @@
             style="fill-opacity:0"
             d="M 44.39513,78.809967 H 159.68481 V 158.30823 H 44.39513 Z" />
           <path
-            id="table1"
+            id="1"
             
             d="m 54.375435,87.413673 h 26.49942 v 13.765937 h -26.49942 z" />
           <path
-            id="table2"
+            id="2"
             
             d="m 54.203362,115.28968 h 26.49942 v 13.76593 h -26.49942 z" />
           <path
-            id="table3"
+            id="3"
             
             d="m 123.72132,86.381233 h 26.49942 v 13.765937 h -26.49942 z" />
           <path
-            id="table4"
+            id="4"
             class="table"
             d="m 123.72132,115.63383 h 26.49942 v 13.76593 h -26.49942 z" />
           <path
-            id="table5"
+            id="5"
             class="table"
             d="M 89.306488,87.069527 H 115.80591 V 100.83546 H 89.306488 Z" />
           <path
-            id="table6"
+            id="6"
             class="table"
             d="m 88.618195,115.63383 h 26.499415 v 13.76593 H 88.618195 Z" />
           <text
@@ -44,7 +44,7 @@
         </g>
       </svg>
 
-      <button id='myBtn'>Check your Reservations</button>
+      {{!-- <button id='myBtn'>Check your Reservations</button> --}}
   <div id='myModal' class='modal'>
 
     <div class='modal-content'>
@@ -65,10 +65,11 @@
               id='myRange'
             />
             <p>Reservation for: <span id='customer_id'></span></p>
+            <p id="testuserid">
             {{!-- <label for='fname'>First name:</label>
             <input type='text' id='fname' name='fname' /><br /><br /> --}}
           </div>
-          <input type='submit' formmethod='post' value='update reservation' />
+          <button id="submit" type="submit">Make your Reservation</button>
         </form>
       </div>
       <div class='modal-footer'>
@@ -77,8 +78,8 @@
     </div>
     </div>
 
-    <script src="/js/floorPlanGUI"></script>
-    <script src="/js/modalHandler.js"></script>
+    {{!-- <script src="/js/floorPlanGUI.js"></script> --}}
+    <script type="module" src="/js/modalHandler.js"></script>
 </div>
 
   {{!-- <input type="radio" id="pizza" name="fav_resturant" value="HTML">

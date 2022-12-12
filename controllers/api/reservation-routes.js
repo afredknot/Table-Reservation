@@ -7,7 +7,7 @@ router.post('/', async (req, res) => {
   try {
     const reservation = await Reservation.create({
       restaurant_id: req.body.restaurant_id,
-      user_id: req.body.user_id,  
+      user_id: req.session.user,  
       dining_table_id: req.body.dining_table_id,
       num_guests: req.body.num_guests,
       date_time: req.body.date_time,
