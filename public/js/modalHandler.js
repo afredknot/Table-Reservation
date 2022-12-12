@@ -1,10 +1,7 @@
 let selectedTable = 0;
 
 // Get the modal
-var modal = document.getElementById("myModal");
-
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
+const modal = document.getElementById("myModal");
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
@@ -36,23 +33,23 @@ window.onclick = function(event) {
 //   output.innerHTML = this.value;
 // }
 // Close the dropdown if the user clicks outside of it
-window.onclick = function(e) {
-  if (!e.target.matches('.dropbtn')) {
-  var myDropdown = document.getElementById("myDropdown");
-    if (myDropdown.classList.contains('show')) {
-      myDropdown.classList.remove('show');
-    }
-  }
-}
+// window.onclick = function(e) {
+//   if (!e.target.matches('.dropbtn')) {
+//   var myDropdown = document.getElementById("myDropdown");
+//     if (myDropdown.classList.contains('show')) {
+//       myDropdown.classList.remove('show');
+//     }
+//   }
+// }
 
 
 // When the user clicks on the button, open the modal
-let tables = document.querySelector("#svg5")
+let tables = document.querySelector("#svg")
+let restaurant = document.querySelector('.restaurant')
+let restaurantID = restaurant.id;
+
 
 tables.addEventListener("click", (e) => {
-  
-  
-  
   modal.style.display = "block";
   selectedTable = Number(e.target.id);
 });
@@ -64,7 +61,7 @@ const handleSubmit = async (e) => {
   const response = await fetch('/api/reservations/', {
     method: 'POST',
     body: JSON.stringify({ 
-    restaurant_id: 1,
+    restaurant_id: restaurantID,
     dining_table_id: selectedTable,
     num_guests: Number(slider.value),
     date_time: '2022-12-15' 

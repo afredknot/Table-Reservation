@@ -80,8 +80,13 @@ router.get('/profile', async (req, res) => {
   try {
     const dbUserData = await User.findOne({
       where: {
-        user_id: req.session.user,
+        user_id: 1,
       },
+      include: [ 
+        {model: Reservation},
+        // {model: Restaurant, attributes: ['name']},
+        // {model: DiningTable, attributes: ['restaurant_table_ref']},
+      ]
     });
     if (!dbUserData) {
       res.status(404).json({ message: 'No user with this id' });
