@@ -333,6 +333,7 @@ footer{
   background-color: inherit;
   font-family: inherit;
   margin: 0;
+  justify-content:baseline;
 }
 
 .navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
@@ -341,7 +342,7 @@ footer{
 
 .dropdown-content {
   display: none;
-  /* position: absolute; */
+  position: absolute;
   background-color: #8a9486;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
