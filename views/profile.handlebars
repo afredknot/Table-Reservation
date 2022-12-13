@@ -1,22 +1,24 @@
 
-   <div> <p>Get your Reservation results here </p>
 
-    {{!-- {{#each user_id as |result|}}
-    {{> reservation_details }}
-    {{/each}} --}}
     <div class="card-body">
-      <a href="../users/profile/reservations"class= "button1" id = "profileBtn">Find your saved reservations</a>
-      {{!-- <img src="/images/{{filename}}" alt="{{description}}"> --}}
-      <p>Name: {{ user.first_name }} {{ user.last_name }}</p>
 
-      <p>Phone: {{ user.phone_number }}</p>
-     
-      <p>Email: {{ user.email }}</p>
+      {{!-- <img src="/images/{{filename}}" alt="{{description}}"> --}}
+      <h2>{{ user.first_name }} {{ user.last_name }}</h5>
+      <h4>Email</h4>
+
+      <h5>{{ user.email }}</h5>
+
+      <h4>Phone</h4>
+      <h5>{{ user.phone_number }}</h5>
+
+      <p id="resobutton">
+        <a href="../users/profile/reservations"class= "button1" id = "profileBtn"> My reservations</a>
+      </p>
     </div>
-<div> <a href="/" class="button1">Return to Home</a>
-</div>
+{{!-- <div> <a href="/" class="button1">Return to Home</a> --}}
+{{!-- </div>
    
 </div>
-   
+    --}}
 
 
