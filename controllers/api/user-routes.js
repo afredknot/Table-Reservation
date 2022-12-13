@@ -14,7 +14,7 @@ router.post('/', async (req, res) => {
 
     req.session.save(() => {
       req.session.loggedIn = true;
-
+      req.session.user = dbUserData.user_id;
       res.status(200).json(dbUserData);
     });
   } catch (err) {
@@ -92,7 +92,7 @@ router.get('/profile', async (req, res) => {
     const user = dbUserData.get({ plain: true });
 
     // res.status(200).json(dbUserData);
-    res.status(200).render('profile', {user});
+    res.status(200).render('profile', {user, loggedIn: req.session.loggedIn,});
   } catch (err) {
     res.status(500).json(err);
   }
@@ -114,9 +114,9 @@ router.get('/profile/reservations/', async (req, res) => {
       }
     );
 
-    const reservation = reservationData.map((reservation) => reservation.get({ plain: true }));
+    const reservations = reservationData.map((reservation) => reservation.get({ plain: true }));
 
-    res.status(200).json(reservation);
+    res.status(200).render('reservations', {reservations, loggedIn: req.session.loggedIn,});
   } catch (err) {
     res.status(500).json(err);
   }

@@ -58,7 +58,7 @@ router.get('/search/:restaurant', async (req, res) => {
     const results = dbRestaurantData.map((data) => data.get({ plain: true }));
     console.log(results);
     
-      res.render("search", { results });
+      res.render("search", { results, loggedIn: req.session.loggedIn, });
     } catch (err) {
       res.status(500).json(err);
     }
@@ -85,7 +85,7 @@ router.get('/search/:restaurant', async (req, res) => {
     });
       const restaurant = restaurantData.get({ plain: true });
       
-      res.status(200).render('restaurantdetails', {restaurant});
+      res.status(200).render('restaurantdetails', {restaurant, loggedIn: req.session.loggedIn,});
     } catch (err) {
       res.status(500).json(err);
     }
@@ -143,7 +143,7 @@ router.get('/search/:restaurant', async (req, res) => {
       console.log(diningTableResos);
 
       // res.status(200).json(restaurantObject);
-      res.status(200).render('tableselect', {restaurantObject});
+      res.status(200).render('tableselect', {restaurantObject, loggedIn: req.session.loggedIn,});
     } catch (err) {
       res.status(500).json(err);
     }

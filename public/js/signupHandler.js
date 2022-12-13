@@ -6,6 +6,7 @@ const phoneNum = document.querySelector("#phone-signup");
 const passOne = document.querySelector("#passOne-signup");
 const passTwo = document.querySelector("#passTwo-signup");
 const errorEl = document.querySelector("#errorText");
+const successEl = document.querySelector("#successText")
 
 function handleSubmit(e) {
     e.preventDefault();
@@ -20,6 +21,7 @@ function handleSubmit(e) {
 
     if(passOne.value == passTwo.value) {
         data.password = passOne.value;
+        successEl.innerHTML=""
     } else {
         errorEl.innerHTML = "Error: Your passwords must match!";
         passOne.value = "";
@@ -34,7 +36,7 @@ function handleSubmit(e) {
     })
     .then((response) => {
         if(response.status == 200) {
-            alert("Account Creation Successful.");
+            successEl.innerHTML =`Hurray! Your account was created!`;
             return document.location.replace('/');
         } else {
             errorEl.innerHTML = `Error: Code ${response.status}.`

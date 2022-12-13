@@ -3,17 +3,15 @@
 
     {{!-- {{#each user_id as |result|}}
     {{> reservation_details }}
-    {{/each}}
+    {{/each}} --}}
     <div class="card-body">
-      {{!-- <a href="api/users/profile"class= "button1" id = "profileBtn">Find your reservations</a> --}}
-      <img src="/images/{{filename}}" alt="{{description}}"> --}}
-      <p>Name {{ user.first_name }}</p>
+      <a href="../users/profile/reservations"class= "button1" id = "profileBtn">Find your saved reservations</a>
+      {{!-- <img src="/images/{{filename}}" alt="{{description}}"> --}}
+      <p>Name: {{ user.first_name }} {{ user.last_name }}</p>
 
-      {{!-- <p>Restaurant {{this.reservation.restaurant_id}}</p>
+      <p>Phone: {{ user.phone_number }}</p>
      
-      <p>Number in Party: {{num_guests}}</p> --}}
-
-      {{!-- <p>Table Number {{}}</p> --}}
+      <p>Email: {{ user.email }}</p>
     </div>
 <div> <a href="/" class="button1">Return to Home</a>
 </div>
