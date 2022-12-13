@@ -75,6 +75,7 @@ router.post('/logout', (req, res) => {
 });
 
 
+
 //Get one user
 router.get('/profile', async (req, res) => {
   try {
@@ -109,8 +110,8 @@ router.get('/profile/reservations/', async (req, res) => {
           {model: DiningTable, attributes: ['restaurant_table_ref']},
         ]
       }
-    );    
-  
+    );
+
     const reservation = reservationData.map((reservation) => reservation.get({ plain: true }));
 
     res.status(200).json(reservation);
@@ -127,5 +128,4 @@ router.get('/', async (req, res) => {
     res.status(500).json(err);
   }
 });
-
 module.exports = router;
