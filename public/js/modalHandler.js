@@ -1,5 +1,6 @@
 let selectedTable = 0;
-
+const errorEl = document.querySelector("#errorText");
+const confirmEl = document.querySelector("#confirmText")
 // Get the modal
 const modal = document.getElementById("myModal");
 
@@ -72,9 +73,10 @@ const handleSubmit = async (e) => {
   });
 
   if (response.status == 200) {
+   confirmEl.innerHTML =`Hurray! Your reservation was created!`;
     return document.location.reload();
   } else {
-    alert('Failed to make a reservation.');
+    errorEl.innerHTML = `Error: There was no reservation placed.`
   }
 }
 
