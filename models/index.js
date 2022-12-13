@@ -7,6 +7,36 @@ User.hasMany(Reservation, {
   foreignKey: 'user_id',
 });
 
+// User.belongsToMany(DiningTable, {
+//   through: {
+//     model: Reservation,
+//     unique: false
+//   },
+// });
+
+// DiningTable.belongsToMany(User, {
+//   through: {
+//     model: Reservation,
+//     unique: false
+//   },
+// });
+
+// User.belongsToMany(Restaurant, {
+//   through: {
+//     model: Reservation,
+//     unique: false
+//   },
+// });
+
+
+// Restaurant.belongsToMany(User, {
+//   through: {
+//     model: Reservation,
+//     unique: false
+//   },
+// });
+
+
 Reservation.belongsTo(User, {
   foreignKey: 'user_id',
 });
@@ -33,7 +63,7 @@ Restaurant.hasMany(Reservation, {
 });
 
 Reservation.belongsTo(Restaurant, {
-  foreignKey: 'reservation_id',
+  foreignKey: 'restaurant_id',
 });
 
 module.exports = { User, DiningTable, Restaurant, Reservation };

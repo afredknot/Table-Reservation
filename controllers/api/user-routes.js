@@ -79,20 +79,17 @@ router.post('/logout', (req, res) => {
 router.get('/profile', async (req, res) => {
   try {
     const dbUserData = await User.findOne({
-      where: {
-        user_id: 1,
-      },
+      where: { user_id: req.session.user },
       include: [ 
         {model: Reservation},
-        // {model: Restaurant, attributes: ['name']},
-        // {model: DiningTable, attributes: ['restaurant_table_ref']},
       ]
     });
     if (!dbUserData) {
       res.status(404).json({ message: 'No user with this id' });
       return;
     }
-    res.status(200).render('profile', {dbUserData});
+    res.status(200).json(dbUserData);
+    // res.status(200).render('profile', {dbUserData});
   } catch (err) {
     res.status(500).json(err);
   }
@@ -100,12 +97,12 @@ router.get('/profile', async (req, res) => {
 
 
 // GET reservation by user ID
-router.get('/reservations/:user_id', async (req, res) => {
+router.get('/profile/reservations/', async (req, res) => {
   try {
 
     const reservationData = await Reservation.findAll(
       {
-        where:{user_id: req.params.user_id}, 
+        where:{user_id: req.session.user}, 
         include: [ 
           {model: User, attributes: ['first_name', 'last_name']},
           {model: Restaurant, attributes: ['name']},
