@@ -26,10 +26,6 @@ Reservation.init(
     dining_table_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      // references: {
-      //   model: 'dining_table',
-      //   key: 'dining_table_id',
-      // },
     },
     num_guests: {
       type: DataTypes.INTEGER,
