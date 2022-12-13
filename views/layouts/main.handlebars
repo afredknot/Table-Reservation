@@ -12,8 +12,8 @@
       <nav>
         {{#if loggedIn}}
 
-          <div class='dropdown-content' id='myDropdown'>
-            <a href='/' class='button1'>Home</a>
+          <div class='dropdown-content'>
+            <a href='/' id='homeBtn' class='button1'>Home</a>
             <a
               href="/api/users/profile"
               class='button1'
@@ -22,7 +22,7 @@
             <a
               href="/api/users/profile/reservations"
               class='button1'
-              id='profileBtn'
+              id='reservationBtn'
             >Reservations</a>
           </div>
 
