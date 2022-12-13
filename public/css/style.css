@@ -30,6 +30,7 @@ main {
   flex-wrap: wrap;
   flex-grow: 1;
   justify-content: center;
+  margin-top: 150px;
 }
 
 aside {
