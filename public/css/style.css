@@ -51,12 +51,11 @@ nav {
   border-bottom: thick double var(--light);
 }
 
-nav a.button1, a.button1, button {
+nav a.button1, a.button1 {
   display: inline-block;
   padding: 0.5em 3em;
   border: 0.16em solid #b7cce6;
   margin: 0 0.3em 0.3em 0;
-  border-radius: 10px;
   box-sizing: border-box;
   text-decoration: none;
   text-transform: uppercase;
@@ -76,15 +75,15 @@ a.button1{
   margin:0.4em auto;
  }
  
-/* a.button1:hover, button:hover{
+a.button1:hover{
   color:#DDDDDD;
   border-color:#DDDDDD;
   }
 
-a.button1:active, button:active{
+a.button1:active{
   color:#BBBBBB; 
   border-color:#BBBBBB;
-  } */
+  }
 
 /* HERO SECTION */
 
@@ -182,27 +181,6 @@ footer{
   border-width: thick;
   background-color: #577a7c;
   color: var(--light);
-  text-align: center;
-  justify-content: space-evenly;
-}
-
-.form-input{
-  background: rgba(255,255,255,.5);
-  border: none;
-  justify-content:center ;
-  align-content: center;
-  display: flex;
-  flex:content;
-  justify-self: center;
-  padding: auto;
-  margin: auto;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  width: 260px;
-  border: none;
-  border-radius: 15px 15px 15px 15px;
-  
-
 }
 
 .card header {
@@ -213,7 +191,6 @@ footer{
   background-color: var(--tertiary);
   padding: 0.625rem;
   border-radius: calc(0.18rem - 1px) calc(0.18rem - 1px) 0 0;
- 
 }
 
 .card-body {
@@ -221,186 +198,28 @@ footer{
   text-align: center;
   font-weight: bold;
 }
-.modal {
-  display: none; 
-  position: fixed; 
-  z-index: 1; 
-  left: 0;
-  top: 0;
-  width: 100%; 
-  height: 100%; 
-  overflow: auto; 
-  background-color: rgb(0,0,0); 
-  background-color: rgba(0,0,0,0.4); 
+
+.draggable {
+  min-width: 50vw;
+  min-height: 50vh;
 }
 
-/* Modal Content/Box */
-.modal-content {
-  background-color: #d6b6b6;
-  margin: 15% auto; 
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%; 
-  border-radius: 15px;
+.object{
+  min-width: 100%;
+  min-height: 100%;
 }
 
-/* The Close Button */
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
-/* Modal Header */
-.modal-header {
-  padding: 2px 16px;
-  background-color: #798099;
-  color: white;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-}
-
-/* Modal Body */
-.modal-body {
-  padding: 2px 16px;
- 
-}
-
-
-/* Modal Footer */
-.modal-footer {
-  padding: 2px 16px;
-  background-color: #798099;
-  color: white;
-  border-bottom-left-radius: 10px;
-  border-bottom-left-radius: 15px;
-}
-
-/* Modal Content */
-.modal-content {
-  position: relative;
-  background-color: #d8d3a6;
-  margin: auto;
-  padding: 0;
-  border: 1px solid #888;
-  width: 80%;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-  animation-name:animatetop;
-  animation-duration: 0.4s;
-}
-
-/* Add Animation */
-@keyframes animatetop {
-  from {top: -300px; opacity: 0}
-  to {top: 0; opacity: 1}
-}
-
-.navbar {
+.map-container {
+  background-color: blue;
+  border: 5px black;
+  width: 40vw;
+  height: 40%;
   overflow: hidden;
-  background-color: #333;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
-.navbar a {
-  float: left;
-  font-size: 16px;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-.dropdown {
-  float: left;
-  overflow: hidden;
-  /* position:absolute; */
-}
-
-.dropdown .dropbtn {
-  cursor: pointer;
-  font-size: 16px;  
-  border: none;
-  outline: none;
-  color: white;
-  padding: 14px 16px;
-  background-color: inherit;
-  font-family: inherit;
-  margin: 0;
-}
-
-.navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
-  background-color: rgb(36, 30, 30);
-}
-
-.dropdown-content {
-  display: none;
-  /* position: absolute; */
-  background-color: #8a9486;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  float: none;
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-
-.dropdown-content a:hover {
-  background-color: #ddd;
-}
-
-.show {
-  display: block;
-}
-.slidecontainer {
-  width: 30%; 
-}
-
-/* The slider itself */
-.slider {
-  -webkit-appearance: none; 
-  appearance: none;
-  width: 100%;
-  height: 25px; 
-  background: #d3d3d3;
-  outline: none; 
-  opacity: 0.7; 
-  -webkit-transition: .2s; 
-  transition: opacity .2s;
-}
-
-
-.slider:hover {
-  opacity: 1; 
-}
-
-
-.slider::-webkit-slider-thumb {
-  -webkit-appearance: none; 
-  appearance: none;
-  width: 25px; 
-  height: 25px; 
-  background: #085a7a;
-  cursor: pointer; 
-}
-
-.slider::-moz-range-thumb {
-  width: 25px;
-  height: 25px;
-  background: #085a7a; 
-  cursor: pointer; 
+.white {
+  stroke: red;
+  fill: green;
 }
 
 /* User Profile Styling */
