@@ -1,5 +1,65 @@
 <div>
-    <svg id="floorPlan" src="{{restFloor}}">
+  <div class='map-container'>
+    {{{restaurantObject.floorplan}}}
+  </div>
 
-    <script src="/js/floorPlanGUI"></script>
+  <div id='myModal' class='modal'>
+    <div class='modal-content'>
+      <div class='modal-header'>
+        <span class='close'>&times;</span>
+        <h2>Graphical Reservation</h2>
+      </div>
+      <div class='modal-body'>
+        <form>
+          <div class='slidecontainer'>
+            <p>how many are in your party:</p>
+            <input
+              type='range'
+              min='1'
+              max='10'
+              value='2'
+              class='slider'
+              id='myRange'
+            />
+            <p>Reservation for: <span id='customer_id'></span></p>
+
+            {{! <label for='fname'>First name:</label>
+            <input type='text' id='fname' name='fname' /><br /><br /> }}
+          </div>
+          <button id='submit' type='submit'>Make your Reservation</button>
+        </form>
+      </div>
+
+      <div class='modal-footer'>
+        <h3>thanks for choosing us for you reservation needs</h3>
+      </div>
+    </div>
+  </div>
+  <p id='confirmText'></p>
+  <p id='errorText'></p>
+  <script src='/js/floorPlanGUI.js'></script>
+  <script src='/js/modalHandler.js'></script>
 </div>
+
+{{! <input type="radio" id="pizza" name="fav_resturant" value="HTML">
+<label for="html">pizza pizza</label><br>
+<input type="radio" id="css" name="fav_resturant" value="CSS">
+<label for="css">Burgers 'N Beer</label><br>
+<input type="radio" id="javascript" name="fav_resturant" value="JavaScript">
+<label for="javascript">Wanna TACO bout it</label>
+</form>
+<form action="/action_page.php" method="get"> }}
+
+{{! <label for="lname">
+    <div class="dropdown">
+
+
+      <button class="dropbtn" onclick="myFunction()">Dropdown
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content" id="myDropdown">
+        <a href="/tableselect">Link 1</a>
+        <a href="/resturantdetails">Link 2</a>
+      </div>
+    </div>
+  </label> }}

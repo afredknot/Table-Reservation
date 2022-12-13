@@ -1,5 +1,7 @@
+
 <div class="login-card">
     <h2 class="page-title">Signup</h2>
+    <p id="successText"></p>
     <p id="errorText"></p>
     <form class="form signup-form" id="submitForm">
       <div class="form-group">
@@ -9,22 +11,22 @@
       </div>
       <div class="form-group">
         <label for="email-signup">Email:</label>
-        <input class="form-input" type="email" id="email-signup" required/>
+        <input class="form-input" type="email" placeholder = "email@email.com" id="email-signup" required/>
       </div>
       <div class="form-group">
         <label for="phone-signup">Phone Number:</label>
-        <input class="form-input" type="tel" id="phone-signup" required/>
+        <input class="form-input" type="tel" placeholder="16145326732" id="phone-signup" required/>
       </div>
       <div class="form-group">
         <label for="password-signup">Password:</label>
-        <input class="form-input" type="password" id="password-signup" required/>
+        <input class="form-input" type="password" placeholder="password" id="passOne-signup" required/>
       </div>
       <div class="form-group">
         <label for="password-signup">Confirm Password:</label>
-        <input class="form-input" type="password" id="password-signup" required/>
+        <input class="form-input" type="password" placeholder="password" id="passTwo-signup" required/>
       </div>
       <div class="form-group">
-        <button type="submit">signup</button>
+        <button id="submit" type="submit">signup</button>
       </div>
     </form>
   </div>

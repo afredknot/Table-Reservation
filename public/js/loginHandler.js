@@ -1,5 +1,5 @@
 const loginEl = document.querySelector('.login-form');
-
+const errorEl = document.querySelector("#errorText");
 const loginFormHandler = async (event) => {
   event.preventDefault();
 
@@ -14,11 +14,11 @@ const loginFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/');
+      return document.location.replace('/');
     } else {
-      alert('Failed to log in.');
+      errorEl.innerHTML = `Failed to login.`;
     }
   }
 };
 
-loginEL.addEventListener('submit', loginFormHandler);
+loginEl.addEventListener('submit', loginFormHandler);

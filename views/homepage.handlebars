@@ -1,30 +1,33 @@
 <div class="heroContainer">
-    <div class="bottomLayer">
-        <img class="heroOne" src="/images/TableThree.jpg">
-    </div>
-    <div class="topLayer">
-    <!-- {{#if loggedIn}}
-            <input type="text" placeholder="Find a Restaurant...">
-        {{else}} -->
+      <div class="bottomLayer">
+        <img class="heroOne" src="./images/TableThree.jpg">
+      </div>
+       <div class="topLayer">
+     {{#if loggedIn}}
+        <div class="search">
+          <input id="searchBar" type="text" placeholder="Find a Restaurant...">
+          <div id="searchBtn"></div>
+            <script src="./js/searchHandler.js"></script>
+        </div>
+    {{else}} 
             <a href="/signup" class="button1">Sign Up</a>
-    <!-- {{/if}} -->
+     {{/if}} 
     </div>
-</div>
 
-<card>
-    <div class="inner">
+    <card>
+      <div class="inner">
         <h2>About:</h2>
         <p>Our team works with restaurants to make the reservation process easy! Each location has a floor plan laid out
-            so you can choose exactly where you want to sit. Book dirrectly through us and manage your reservation
-            through your account.</p>
-    </div>
-</card>
+          so you can choose exactly where you want to sit. Book directly through us and manage your reservation
+          through your account.</p>
+      </div>
+    </card>
 
-<card class="right">
-    <div class="inner">
+    <card class="right">
+      <div class="inner">
         <h2>How to:</h2>
         <p>Log in or create an account with us by following the link above. After logging in you're able to search for
-            participating restaurants, view their tables availible for reservation and make requests for whichever table
-            looks best!</p>
-    </div>
-</card>
+          participating restaurants, view their tables availible for reservation and make requests for whichever table
+          looks best!</p>
+      </div>
+    </card>

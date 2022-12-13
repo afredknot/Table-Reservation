@@ -1,37 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Graphical Reservation</title>
-  <link rel="stylesheet" href="/css/style.css" />
-</head>
+  <head>
+    <meta charset='utf-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <title>Graphical Reservation</title>
+    <link rel='stylesheet' href='/css/style.css' />
+  </head>
 
-<body>
-  <header>
-    <nav>
-      {{#if loggedIn}}
-      <a href="/" class="button1">Home</a>
-      <img id="userimg" src="{{userimg}}">
-      <a href="/logout" class="button1">Logout</a>
-      {{else}}
-      <h1>Graphical Reservation</h1>
-      <a href="/login" class="button1">Login</a>
-      {{/if}}
-    </nav>
-  </header>
+  <body>
+    <header>
+      <nav>
+        {{#if loggedIn}}<button class='dropbtn' onclick='myFunction()'>Menu<i
+              class='fa fa-caret-down'
+            ></i>
+          </button>
+          <div class='dropdown-content' id='myDropdown'>
+            <a href='/' class='button1'>Home</a>
+            <a
+              href="/api/users/profile"
+              class='button1'
+              id='profileBtn'
+            >Profile</a>
 
-  <main>
-    {{{body}}}
-  </main>
+          </div>
 
-  <footer>
-    <!-- {{#if loggedIn}}
+          <img id='userimg' src='{{userimg}}' />
+
+          <button id='logoutBtn' type='submit'>Logout</button>
+          <p id="errorText"></p>
+
+        {{else}}
+          <h1>Graphical Reservation</h1>
+          
+          <a href='/login' class='button1'>Login</a>
+        {{/if}}
+      </nav>
+    </header>
+
+    <main>
+      {{{body}}}
+    </main>
+
+    <footer>
+      <!-- {{#if loggedIn}}
       <img id="logoblock" src="smallLogo.png">
     {{/if}} -->
-    <p>Created by XYZ</p>
-  </footer>
-</body>
+      <p>Created by XYZ</p>
+    </footer>
+  </body>
+  {{#if loggedIn}}
+    <script src='/js/logout.js'></script>
+    <script src='js/navmenu.js'></script>
+  {{/if}}
 
 </html>
