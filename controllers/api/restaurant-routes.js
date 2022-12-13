@@ -58,7 +58,7 @@ router.get('/search/:restaurant', async (req, res) => {
     const results = dbRestaurantData.map((data) => data.get({ plain: true }));
     console.log(results);
     
-      res.render("search", { results });
+      res.render("search", { results, loggedIn: req.session.loggedIn, });
     } catch (err) {
       res.status(500).json(err);
     }
