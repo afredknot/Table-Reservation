@@ -114,9 +114,9 @@ router.get('/profile/reservations/', async (req, res) => {
       }
     );
 
-    const reservation = reservationData.map((reservation) => reservation.get({ plain: true }));
+    const reservations = reservationData.map((reservation) => reservation.get({ plain: true }));
 
-    res.status(200).json(reservation);
+    res.status(200).render('reservations', {reservations, loggedIn: req.session.loggedIn,});
   } catch (err) {
     res.status(500).json(err);
   }
