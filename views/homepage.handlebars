@@ -1,14 +1,17 @@
 <div class="heroContainer">
       <div class="bottomLayer">
-        <img class="heroOne" src="/images/TableThree.jpg">
+        <img class="heroOne" src="./images/TableThree.jpg">
       </div>
-      <div class="topLayer">
+       <div class="topLayer">
+     {{#if loggedIn}}
         <div class="search">
           <input id="searchBar" type="text" placeholder="Find a Restaurant...">
           <div id="searchBtn"></div>
+            <script src="./js/searchHandler.js"></script>
         </div>
-        <script src="/js/searchHandler.js"></script>
-      </div>
+    {{else}} 
+            <a href="/signup" class="button1">Sign Up</a>
+     {{/if}} 
     </div>
 
     <card>
