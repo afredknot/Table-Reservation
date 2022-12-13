@@ -8,16 +8,16 @@ var span = document.getElementsByClassName("close")[0];
 
 var slider = document.getElementById("myRange");
 var output = document.getElementById("customer_id");
-// output.innerHTML = slider.value; 
+output.innerHTML = slider.value; 
 // / Display the default slider value
 // When the user clicks on the button, open the modal
 
 const submitReso = document.getElementById('submit')
 
 // When the user clicks on <span> (x), close the modal
-// span.onclick = function() {
-//   modal.style.display = "none";
-// }
+span.onclick = function() {
+  modal.style.display = "none";
+}
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
@@ -29,9 +29,9 @@ window.onclick = function(event) {
 // function myFunction() {
 //   document.getElementById("myDropdown").classList.toggle("show");
 // }
-// slider.oninput = function() {
-//   output.innerHTML = this.value;
-// }
+slider.oninput = function() {
+  output.innerHTML = this.value;
+}
 // Close the dropdown if the user clicks outside of it
 // window.onclick = function(e) {
 //   if (!e.target.matches('.dropbtn')) {
@@ -50,8 +50,10 @@ let restaurantID = restaurant.id;
 
 
 tables.addEventListener("click", (e) => {
-  modal.style.display = "block";
-  selectedTable = Number(e.target.id);
+  if (Number(e.target.id) <=15 ){
+    modal.style.display = "block";
+    selectedTable = Number(e.target.id);
+  }
 });
 
 
@@ -70,7 +72,7 @@ const handleSubmit = async (e) => {
   });
 
   if (response.status == 200) {
-    return document.location.replace('/');
+    return document.location.reload();
   } else {
     alert('Failed to make a reservation.');
   }

@@ -124,18 +124,26 @@ router.get('/search/:restaurant', async (req, res) => {
       const restaurantData = await Restaurant.findOne(
         {
         where:{restaurant_id: req.params.restaurant_id},
-
+        include: [{model: Reservation}]
       });
-  
-      const restaurant = restaurantData.get({ plain: true });
-
-      const floorplanFilepath = restaurant.floorplan_filepath
       
+      const diningTableResos = [];
+      const restaurant = restaurantData.get({ plain: true });
+      for (i=0; i<restaurant.reservations.length; i++){
+        diningTableResos.push(restaurant.reservations[i].dining_table_id)
+      }
+   
+      const floorplanFilepath = restaurant.floorplan_filepath
       const floorplan = fs.readFileSync(`db/floorplans/${floorplanFilepath}`, 'utf8');
+      
+      let restaurantObject = {
+        reservations: diningTableResos,
+        floorplan: floorplan
+      }
+      console.log(diningTableResos);
 
-      console.log(floorplan);
-
-      res.status(200).render('tableselect', {floorplan});
+      // res.status(200).json(restaurantObject);
+      res.status(200).render('tableselect', {restaurantObject});
     } catch (err) {
       res.status(500).json(err);
     }
