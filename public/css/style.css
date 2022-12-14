@@ -383,9 +383,9 @@ footer{
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  width: 40%;
+  width: 30%;
   height: 60vh;
-  background-color: rgb(16, 48, 23);
+  background-color: rgb(51, 72, 80);
   border-radius: 20px;
   margin-top: 20px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -410,22 +410,30 @@ footer{
 }
 
 .detailsImage {
-  width: 20vw;
+  margin-top: 2rem;
+  width: 15vw;
   height: 20vh;
   border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .detailsDisplay a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 4vh;
-  background-color: gray;
-  height: 30px;
-  width: 20%;
-  border-radius: 15px;
+  display: inline-block;
+  padding: 0.5em 3em;
+  border: 0.16em solid #b7cce6;
+  margin: 0 0.3em 0.3em 0;
+  border-radius: 10px;
+  box-sizing: border-box;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: 'Roboto',sans-serif;
+  font-weight: 400;
+  color: #dde2e7;
+  text-align: center;
+  transition: all 0.15s;
+  background-color: var(--shadow);
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin-bottom: 1.5rem;
 }
 
 /* TABLE SELECTION STYLING */
@@ -823,3 +831,23 @@ color: var(--light);
 font-size: 20px;
 
 }
+
+#restaurant-website {
+ color: white;
+ text-decoration: underline;
+}
+
+#restaurant-hours {
+  color: white;
+  padding-top: 1.5rem;
+}
+
+#restaurant-address {
+  color: white;
+}
+
+#restaurant-description {
+  margin-top: 1rem;
+  color: white;
+  font-size: 1rem;
+ }
