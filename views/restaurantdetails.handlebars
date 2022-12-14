@@ -1,14 +1,10 @@
-<div>
-    <img src="{{restaurant.image_link}}">
-
+<div class="detailsDisplay"> 
     <h2>{{restaurant.name}}</h2>
-
-    <p>{{restaurant.description}}</p>
-
-    <a href="{{restaurant.menu_link}}">Veiw Menu</a>
-
-    <p>{{restaurant.hours}}</p>
-
-    <a href="reserve/{{restaurant.restaurant_id}}">Reserve a Table</a>
-    
+    <div class="detailsLogo">
+        <img class="detailsImage" src="/images/{{restaurant.image_link}}" alt="Icon for {{restaurant.name}}">
+        <p>"{{restaurant.description}}"</p>
+    </div>
+    <p>Hours: {{restaurant.hours}}</p> 
+    <a href="{{restaurant.menu_link}}">View Menu</a> 
+    <a class="detailsBtn" href="reserve/{{restaurant.restaurant_id}}">Reserve a Table</a>
 </div>
