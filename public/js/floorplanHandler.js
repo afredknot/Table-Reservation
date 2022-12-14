@@ -107,6 +107,7 @@ tables.addEventListener("click", (e) => {
   // if already reserved, display reserved message modal
   if (e.target.classList.contains('red')) {
     modal.style.display = "block";
+    
     for (i=0; i<restaurantDiningTables.length; i++){ 
       if (Number(e.target.id) === restaurantDiningTables[i].dining_table_id){
       tableNumber.textContent = `Table #${restaurantDiningTables[i].restaurant_table_ref}`
