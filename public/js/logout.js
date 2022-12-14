@@ -1,5 +1,5 @@
 const logoutBtn = document.querySelector('#logoutBtn');
-const errorEl = document.querySelector("#errorText");
+const error = document.querySelector("#errorText");
 const logout = async () => {
   const response = await fetch('/api/users/logout', {
     method: 'POST',
@@ -9,7 +9,7 @@ const logout = async () => {
   if (response.ok) {
     document.location.replace('/');
   } else {
-    errorEl.innerHTML = `Failed to logout.`;
+    error.innerHTML = `Failed to logout.`;
   }
 };
 

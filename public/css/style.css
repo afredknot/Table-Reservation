@@ -15,6 +15,11 @@
   outline: none;
 }
 
+a{
+  text-decoration: none;
+  color: initial;
+}
+
 body {
   font-family: Arial;
   margin: 0;
@@ -23,6 +28,7 @@ body {
   min-height: 100vh;
   justify-content: flex-start;
   background-color: var(--quatrinary);
+  overflow-x: hidden;
 }
 
 main {
@@ -41,24 +47,119 @@ aside {
   color: var(--light);
 }
 
-h1{
-  color: var(--light)
-}
-
 .hidden {
   visibility: hidden;
 }
 
-/* NAVBAR STUFF */
+.display_none {
+  display: none;
+}
 
+/* NAVBAR STUFF */
+h1{
+  color: var(--light);
+  margin: 0 0 0 15px;
+}
+
+label .menu {
+  position: absolute;
+  right: -95px;
+  top: -100px;
+  z-index: 100;
+  width: 200px;
+  height: 200px;
+  background: rgb(0, 0, 0);
+  border-radius: 50% 50% 50% 50%;
+  -webkit-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+  box-shadow: 0 0 0 0 rgb(0, 0, 0), 0 0 0 0 rgb(0, 0, 0);
+  cursor: pointer;
+}
+
+label .hamburger {
+  position: absolute;
+  top: 135px;
+  left: 50px;
+  width: 30px;
+  height: 2px;
+  background: #ffffff;
+  display: block;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  -webkit-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+}
+
+label .hamburger:after, label .hamburger:before {
+  -webkit-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+}
+
+label .hamburger:before { 
+  top: -10px; 
+}
+
+label .hamburger:after { 
+  bottom: -10px; 
+}
+
+label input { 
+  display: none; 
+}
+
+label input:checked + .menu {
+  box-shadow: 0 0 0 100vw rgb(0, 0, 0), 0 0 0 100vh rgb(0, 0, 0);
+  border-radius: 0;
+}
+
+label input:checked + .menu .hamburger {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+label input:checked + .menu .hamburger:after {
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+  bottom: 0;
+}
+
+label input:checked + .menu .hamburger:before {
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+  top: 0;
+}
+
+label input:checked + .menu + ul { 
+  opacity: 1; 
+}
+
+label ul {
+  z-index: 200;
+  position: absolute;
+  top: 200%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  -webkit-transition: .35s ease-in-out;
+  transition: .35s ease-in-out;
+}
+
+/* ---------------------------------------- */
 nav {
   display: flex;
   padding: 15px 0 35px 0;
   background-image: linear-gradient(rgb(0, 0, 0) 15%, rgba(0, 0, 0, 0.719), rgba(0, 0, 0, 0));
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   position: absolute;
-  width: 100%;
+  width: 100vw;
 }
 
 nav a.button1, a.button1, button {
@@ -103,6 +204,7 @@ a.button1:active, button:active{
   width: 100%;
   height: auto;
   padding: 10px 0 10px 0;
+  margin-top: -150px;
 }
 
 .topLayer, .bottomLayer{
@@ -119,7 +221,7 @@ a.button1:active, button:active{
   object-fit: cover;
 }
 
-/* SEARCH */
+/* SEARCH BAR */
 
 .search {
   width: 40%;
@@ -222,6 +324,138 @@ footer{
   text-align: center;
 }
 
+/* SEARCH DETAILS PAGE */
+
+.searchResult {
+  display: flex;
+  flex-direction: row;
+  width: 60vw;
+  height: 10vh;
+  margin: 2px 0 2px 0;
+  box-shadow: 0 7px 15px rgba(0, 0, 0, 0.5);
+  margin-bottom: 25px;
+  background-image: inherit;
+  border-radius: 15px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.searchResult:hover {
+  box-shadow: inset 0 -3px 5px white, 0 7px 15px rgba(0, 0, 0, 0.5);
+}
+
+.searchLink:nth-child(odd) {
+  background-image: linear-gradient(white, rgb(157, 60, 247));
+}
+
+.searchLink:nth-child(even) {
+  background-image: linear-gradient(white, rgb(252, 40, 40));
+}
+
+.searchWrapper {
+  display: flex;
+  align-items: center;
+  height: inherit;
+}
+
+.infoWrapper {
+  margin-left: 15px;
+}
+
+.infoWrapper h3 {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.searchIcon {
+  border-radius: 15px;
+  width: 7vw;
+  height: 7vh;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  margin-left: 20px;
+}
+
+/* RESTAURANT DETAILS PAGE */
+
+.detailsDisplay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 40%;
+  height: 60vh;
+  background-color: rgb(16, 48, 23);
+  border-radius: 20px;
+  margin-top: 20px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.detailsDisplay h2 {
+  margin-top: -5vh;
+  font-weight: bolder;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.65);
+}
+
+.detailsLogo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  font-size: 14px;
+}
+
+.detailsLogo p {
+  margin: 5px;
+}
+
+.detailsImage {
+  width: 20vw;
+  height: 20vh;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.detailsDisplay a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 4vh;
+  background-color: gray;
+  height: 30px;
+  width: 20%;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+/* TABLE SELECTION STYLING */
+
+.table {
+  fill: rgba(0, 128, 0, 0.75);
+}
+
+.red {
+  fill: darkred;
+}
+
+.table:hover {
+  fill: rgba(0, 128, 0);
+  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.6));
+  cursor: pointer;
+  stroke: black;
+  stroke-width: .5px;
+  stroke-opacity: .4;
+}
+
+.red:hover {
+  fill: darkred;;
+  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.6));
+  cursor: pointer;
+  stroke: black;
+  stroke-width: .5px;
+  stroke-opacity: .4;
+}
+
 /* SIGNUP CARDS */
 
 .card {
@@ -238,33 +472,32 @@ footer{
   flex: 0 0 50%;
   max-width: 50%;
   padding: 5px;
-  border: 3px solid var(--dark);
-  border-radius: var(--border-radius);
-  border-style: double;
-  border-width: thick;
-  background-color: rgb(83, 83, 83);
+  border-radius: 7px 7px 7px 7px;
+  background-color: rgb(51, 72, 80);
   color: var(--light);
   text-align: center;
+  font-size: 20px;
   justify-content: space-evenly;
 }
 
 .form-input{
   background: rgba(255,255,255,.5);
   border: none;
+  font-size: 15px ;
   justify-content:center ;
   align-content: center;
+  text-align: center;
+  vertical-align: middle;
   display: flex;
   flex:content;
   justify-self: center;
-  padding: 7px;
+  padding: 10px;
   margin: auto;
   margin-top: 5px;
-  margin-bottom:7px;
+  margin-bottom:15px;
   width: 260px;
   border: none;
-  border-radius: 15px 15px 15px 15px;
-  
-
+  border-radius: 10px 10px 10px 10px;
 }
 
 .card header {
@@ -283,6 +516,7 @@ footer{
   text-align: center;
   font-weight: bold;
 }
+
 .modal {
   display: none; 
   position: fixed; 
@@ -505,4 +739,62 @@ h5 {
   font-size: 1.5rem;
   margin: .25rem;
   padding: .25rem;
+}
+
+/* login page */
+#login-card, .card-body {
+  display:flex;
+  flex-direction: column;
+  margin: 0 0 20px 0;
+  max-width: auto;
+  padding: 0px 40px 40px 40px;
+  border-radius: 7px 7px 7px 7px;
+  background-color: rgb(51, 72, 80);
+  color: var(--light);
+  text-align: center;
+  font-size: 20px;
+  justify-content: space-around;
+ 
+}
+.logging{
+  background: rgba(255,255,255,.5);
+  border: none;
+  font-size: 15px ;
+  justify-content:center;
+  align-content: center;
+  display: flex;
+  flex: content;
+  text-align: center;
+  vertical-align: middle;
+  padding: 7px;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom:15px;
+  width: 180px;
+  border: none;
+  border-radius: 10px 10px 10px 10px;
+}
+.login{
+  text-align: center;
+  margin-bottom: 20px;
+  justify-content:flex-start;
+}
+
+.card-body h2,.user{
+  text-align: center;
+  margin-bottom: 20px;
+ 
+}
+
+.user{
+  display:inherit;
+  flex-direction: inherit;
+  background:rgba(33, 29, 29, 0.864);
+  justify-content: inherit;
+  align-content: center;
+  border-radius: 10px 10px 10px 10px;
+  padding:20px;
+}
+.user h4{
+  margin-top: 0;
 }
