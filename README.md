@@ -50,3 +50,11 @@ https://github.com/Dalidorn
 ## Questions
   
   tdfallara@gmail.com
+
+  ## screenshots
+  front landing page
+  ![](./public/images/loginsignupmainpage.png)
+
+  table select page
+
+  ![](./public/images/resturanttableselector.png)
