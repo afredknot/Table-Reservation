@@ -1,7 +1,7 @@
 <div>
     <img src="{{restaurant.image_link}}">
 
-    <h2>{{restaurant.name}}</h2>
+    <h2 class="restaurant" id="{{restaurant.restaurant_id}}" >{{restaurant.name}}</h2>
 
     <p>{{restaurant.description}}</p>
 
@@ -9,6 +9,9 @@
 
     <p>{{restaurant.hours}}</p>
 
-    <a href="reserve/{{restaurant.restaurant_id}}">Reserve a Table</a>
+    {{!-- <button id="reserveBtn">Reserve a Table</button> --}}
+        <a id="reserveBtn" href="reserve/{{restaurant.restaurant_id}}">Reserve a Table</a>
     
 </div>
+
+<script src="/js/restaurantselect.js"></script>

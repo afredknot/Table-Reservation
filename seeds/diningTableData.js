@@ -22,6 +22,16 @@ const diningtabledata = [
     num_seats: 6,
   },
   {
+    restaurant_table_ref: 5,
+    restaurant_id: 1,
+    num_seats: 4,
+  },
+  {
+    restaurant_table_ref: 6,
+    restaurant_id: 1,
+    num_seats: 6,
+  },
+  {
     restaurant_table_ref: 7,
     restaurant_id: 1,
     num_seats: 6,
@@ -87,6 +97,16 @@ const diningtabledata = [
     num_seats: 6,
   },
   {
+    restaurant_table_ref: 5,
+    restaurant_id: 1,
+    num_seats: 4,
+  },
+  {
+    restaurant_table_ref: 6,
+    restaurant_id: 1,
+    num_seats: 6,
+  },
+  {
     restaurant_table_ref: 7,
     restaurant_id: 2,
     num_seats: 6,
@@ -152,6 +172,16 @@ const diningtabledata = [
     num_seats: 6,
   },
   {
+    restaurant_table_ref: 5,
+    restaurant_id: 1,
+    num_seats: 4,
+  },
+  {
+    restaurant_table_ref: 6,
+    restaurant_id: 1,
+    num_seats: 6,
+  },
+  {
     restaurant_table_ref: 7,
     restaurant_id: 3,
     num_seats: 6,
@@ -214,6 +244,16 @@ const diningtabledata = [
   {
     restaurant_table_ref: 4,
     restaurant_id: 4,
+    num_seats: 6,
+  },
+  {
+    restaurant_table_ref: 5,
+    restaurant_id: 1,
+    num_seats: 4,
+  },
+  {
+    restaurant_table_ref: 6,
+    restaurant_id: 1,
     num_seats: 6,
   },
   {
