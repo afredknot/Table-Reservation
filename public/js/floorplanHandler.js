@@ -7,6 +7,7 @@ const modalForm = document.getElementById("modal-form");
 const reserveMessage = document.getElementById("reservedMessage");
 const tableNumber =document.getElementById("table-number")
 const tableQuantity = document.getElementById('table-quantity')
+let title = document.getElementById('restaurant-name')
 
 
 // Get the <span> element that closes the modal
@@ -76,6 +77,8 @@ const getRestaurantInfo = () => {
   
   .then(function (Data) {
     // append list of tables with existing reservations
+    title.textContent = Data.name
+
     for (i=0; i<Data.reservations.length; i++){
         diningTableResos.push(Data.reservations[i].dining_table_id)
     };
@@ -91,7 +94,6 @@ const getRestaurantInfo = () => {
         tableReserved.classList.toggle('red')
     };
 
-    console.log(restaurantDiningTables)
   });
 };
 
