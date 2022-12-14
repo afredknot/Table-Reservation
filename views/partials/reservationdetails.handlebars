@@ -1,9 +1,8 @@
-    <div class="card-body">
 
-      <p>Restaurant: {{ this.restaurant.name }}</p>
-
-      <p>Number of Guests: {{ this.num_guests }}</p>
-
-      <p>Table Number: {{ this.dining_table.restaurant_table_ref }}</p>
-
-    </div>
+        <tr>
+          <td>{{ format_date this.date_time }}</td>
+          <td>{{ format_time this.date_time }}</td>
+          <td>{{ this.num_guests }}</td>
+          <td>{{ this.restaurant.name }}</td>
+          <td>{{ this.dining_table.restaurant_table_ref }}</td>
+        </tr>

@@ -1,13 +1,8 @@
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
+const menu = document.querySelector(".menu");
+const nav = document.querySelector("#navItems");
 
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(e) {
-  if (!e.target.matches('.dropbtn')) {
-  var myDropdown = document.getElementById("myDropdown");
-    if (myDropdown.classList.contains('show')) {
-      myDropdown.classList.remove('show');
-    }
-  }
-}
+function showNav() {
+    nav.classList.toggle("display_none");
+};
+
+menu.addEventListener("click", showNav);

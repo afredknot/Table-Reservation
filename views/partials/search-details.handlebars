@@ -1,9 +1,14 @@
-<div>
-    <a href="../{{this.restaurant_id}}">
-    <img src="/images/{{this.image_link}}" alt="Icon for {{this.name}}">
+<a href="../{{this.restaurant_id}}" class="searchLink">
+    <div class="searchResult">
+        <div class="searchWrapper">
+            <img src="/images/{{this.image_link}}" alt="Icon for {{this.name}}" class="searchIcon">
+            <div class="infoWrapper">
+                <h3>{{this.name}}</h3>
+                <p>{{this.address}}</p>
+            </div>
+        </div>
 
-    <h3>{{this.name}}</h3>
+        <div></div>
+    </div>
+</a>
 
-    <p>{{this.address}}</p>
-    </a>
-</div>

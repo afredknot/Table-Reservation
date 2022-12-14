@@ -1,56 +1,63 @@
 <html lang='en'>
 
-  <head>
-    <meta charset='utf-8' />
-    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-    <title>Graphical Reservation</title>
-    <link rel='stylesheet' href='/css/style.css' />
-  </head>
+<head>
+  <meta charset='utf-8' />
+  <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+  <title>Graphical Reservation</title>
+  <link rel='stylesheet' href='/css/style.css' />
+</head>
 
-  <body>
-    <header>
-      <nav>
-        {{#if loggedIn}}<button class='dropbtn' onclick='myFunction()'>Menu<i
-              class='fa fa-caret-down'
-            ></i>
-          </button>
-          <div class='dropdown-content' id='myDropdown'>
-            <a href='/' class='button1'>Home</a>
-            <a
-              href="/api/users/profile"
-              class='button1'
-              id='profileBtn'
-            >Profile</a>
+<body>
+  <header>
+    <nav>
+      <a href="/"> <img class="logo-svg" src="/images/GRLOGO.svg" alt="Graphical Reservation Logo" ></a>
+      <label> 
+        <input type="checkbox">
+        <span class="menu"> <span class="hamburger"></span> </span>
+        <ul id="navItems" class="display_none">
+          <li> 
+            <a href='/' id='homeBtn' class='button1'>Home</a>
+          </li>
+          {{#if loggedIn}}
+          <li> 
+            <a href="/api/users/profile" class='button1' id='profileBtn'>Profile</a> 
+          </li>
+          <li> 
+            <a href="/api/users/profile/reservations" class='button1' id='reservationBtn'>Reservations</a> 
+          </li>
+          <li> 
+            <button id='logoutBtn' class='button1' type='submit'>Logout</button> 
+          </li>
 
-          </div>
+          {{else}}
+          <li> 
+            <button id='loginBtn' class='button1'>Login</a> 
+          </li>
+          {{/if}}
+        </ul>
+      </label>
 
-          <img id='userimg' src='{{userimg}}' />
+      {{!-- <img id='userimg' src='{{userimg}}' /> --}}
+      {{!-- <p id="errorText"></p> --}}
+    </nav>
+  </header>
 
-          <button id='logoutBtn' type='submit'>Logout</button>
-          <p id="errorText"></p>
+  <main>
+    {{{body}}}
+  </main>
 
-        {{else}}
-          <h1>Graphical Reservation</h1>
-          
-          <a href='/login' class='button1'>Login</a>
-        {{/if}}
-      </nav>
-    </header>
-
-    <main>
-      {{{body}}}
-    </main>
-
-    <footer>
-      <!-- {{#if loggedIn}}
+  <footer>
+    <!-- {{#if loggedIn}}
       <img id="logoblock" src="smallLogo.png">
     {{/if}} -->
-      <p>Created by XYZ</p>
-    </footer>
-  </body>
-  {{#if loggedIn}}
-    <script src='/js/logout.js'></script>
-    <script src='js/navmenu.js'></script>
-  {{/if}}
+    <p>Created by Team4</p>
+  </footer>
+</body>
+<script src='/js/navmenu.js'></script>
+{{#if loggedIn}}
+<script src='/js/logout.js'></script>
+{{else}}
+<script src='/js/loginBtn.js'></script>
+{{/if}}
 
 </html>

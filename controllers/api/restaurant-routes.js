@@ -54,14 +54,20 @@ router.get('/search/:restaurant', async (req, res) => {
       },
       order: [sequelize.literal(`name = '${req.params.restaurant}' desc, length(name)`)]
    })
+   if (dbRestaurantData.length<1){
+       let message = `No matching restaurants were found`
+     res.render("search", { message, loggedIn: req.session.loggedIn, });
 
+   } else {
+    
     const results = dbRestaurantData.map((data) => data.get({ plain: true }));
     console.log(results);
-    
       res.render("search", { results, loggedIn: req.session.loggedIn, });
+    }
     } catch (err) {
       res.status(500).json(err);
     }
+    
   });
 
   // Get restaurant by ID 
@@ -101,7 +107,7 @@ router.get('/search/:restaurant', async (req, res) => {
       include: [
         {
           model: DiningTable,
-          attributes: ['restaurant_table_ref', 'num_seats'],
+          attributes: ['dining_table_id', 'restaurant_table_ref', 'num_seats'],
         },
         {
           model: Reservation,
