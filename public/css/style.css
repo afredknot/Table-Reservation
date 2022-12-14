@@ -529,8 +529,8 @@ footer{
 .login-card {
   margin: 0 0 20px 0;
   flex: 0 0 50%;
-  max-width: 50%;
-  padding: 5px;
+  max-width: 100%;
+  padding: 25px;
   border-radius: 7px 7px 7px 7px;
   background-color: rgb(51, 72, 80);
   color: var(--light);
