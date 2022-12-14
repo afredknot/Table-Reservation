@@ -1,7 +1,8 @@
-const reserveBtn = document.querySelector("#reserveBtn");
-const restaurant = document.querySelector('.restaurant');
-const restaurantID = restaurant.id
 
+const restaurantEl = document.querySelector('.restaurant');
+const restaurantIDEl = restaurant.id
+
+// console.log(restaurantIDEl)
 
 let diningTableResos = []
 let restaurantDiningTables =[]
@@ -17,7 +18,7 @@ fetch(`/api/restaurants/${restaurantID}/data`, {
   
 .then(function (Data) {
     // console.log(Data.dining_tables)
-
+    // console.log(Data)
  
     for (i=0; i<Data.reservations.length; i++){
         diningTableResos.push(Data.reservations[i].dining_table_id)
@@ -27,8 +28,8 @@ fetch(`/api/restaurants/${restaurantID}/data`, {
         restaurantDiningTables.push(Data.dining_tables[i])
     }
 
-    console.log(diningTableResos)
-    console.log(restaurantDiningTables)
+    // console.log(diningTableResos)
+    // console.log(restaurantDiningTables)
     for (i=0; i<diningTableResos.length; i++){
         // todo: target the id and update color
     }
@@ -36,10 +37,12 @@ fetch(`/api/restaurants/${restaurantID}/data`, {
     for (i=0; i<restaurantDiningTables.length; i++){
         // todo: target the id and pass through to modal
     }
+
+    // console.log(diningTableResos)
+    // console.log(restaurantDiningTables)
 })
 
-console.log(diningTableResos)
-console.log(restaurantDiningTables)
+
 
 // .then((response) => {
 //     document.location.replace(`/api/restaurants/reserve/${restaurantID}`)

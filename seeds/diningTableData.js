@@ -98,12 +98,12 @@ const diningtabledata = [
   },
   {
     restaurant_table_ref: 5,
-    restaurant_id: 1,
+    restaurant_id: 2,
     num_seats: 4,
   },
   {
     restaurant_table_ref: 6,
-    restaurant_id: 1,
+    restaurant_id: 2,
     num_seats: 6,
   },
   {
@@ -173,12 +173,12 @@ const diningtabledata = [
   },
   {
     restaurant_table_ref: 5,
-    restaurant_id: 1,
+    restaurant_id: 3,
     num_seats: 4,
   },
   {
     restaurant_table_ref: 6,
-    restaurant_id: 1,
+    restaurant_id: 3,
     num_seats: 6,
   },
   {
@@ -248,12 +248,12 @@ const diningtabledata = [
   },
   {
     restaurant_table_ref: 5,
-    restaurant_id: 1,
+    restaurant_id: 4,
     num_seats: 4,
   },
   {
     restaurant_table_ref: 6,
-    restaurant_id: 1,
+    restaurant_id: 4,
     num_seats: 6,
   },
   {
