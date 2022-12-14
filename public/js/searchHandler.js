@@ -34,4 +34,4 @@ function clearSearch() {
 searchBtn.addEventListener("click", handleSearch);
 searchBar.addEventListener("input", toggleClear);
 searchClear.addEventListener("click", clearSearch);
-// searchBar.addEventListener("")
+searchBar.addEventListener("keydown", function (e) {if (e.code === "Enter") {handleSearch(e)}});
