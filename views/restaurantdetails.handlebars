@@ -2,9 +2,11 @@
     <h2 class="restaurant" id="{{restaurant.restaurant_id}}">{{restaurant.name}}</h2>
     <div class="detailsLogo">
         <img class="detailsImage" src="/images/{{restaurant.image_link}}" alt="Icon for {{restaurant.name}}">
-        <p>"{{restaurant.description}}"</p>
+        <p id="restaurant-description">"{{restaurant.description}}"</p>
     </div>
-    <p>Hours: {{restaurant.hours}}</p> 
+    <p id="restaurant-hours">{{restaurant.hours}} Daily</p> 
+    <p id="restaurant-website">{{restaurant.menu_link}}</p>
+     <p id="restaurant-address">{{restaurant.address}}</p>
     <a href="{{restaurant.menu_link}}">View Menu</a> 
     <a class="detailsBtn" href="reserve/{{restaurant.restaurant_id}}">Reserve a Table</a>
 </div>
