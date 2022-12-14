@@ -1,3 +1,4 @@
+// const { diningTableResos, restaurantDiningTables} = require('/js/restaurantselect.js')
 
 
 // const position = { x: 0, y: 0, scale: 0 }
@@ -49,3 +50,4 @@
   
   
 // });
+
