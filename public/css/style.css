@@ -56,8 +56,8 @@ aside {
 }
 
 /* NAVBAR STUFF */
-h1{
-  color: var(--light);
+.logo-svg{
+  width: 10vw;
   margin: 0 0 0 15px;
 }
 
@@ -149,12 +149,14 @@ label ul {
   opacity: 0;
   -webkit-transition: .35s ease-in-out;
   transition: .35s ease-in-out;
+  color:white;
+  list-style-type: none;
 }
 
 nav {
   display: flex;
   padding: 15px 0 35px 0;
-  background-image: linear-gradient(rgb(0, 0, 0) 15%, rgba(0, 0, 0, 0.719), rgba(0, 0, 0, 0));
+  background-image: linear-gradient(rgb(0, 0, 0) 5%, rgba(0, 0, 0, 0.719), rgba(0, 0, 0, 0));
   justify-content: space-between;
   align-items: center;
   position: absolute;
@@ -220,6 +222,26 @@ a.button1:active, button:active{
   object-fit: cover;
 }
 
+.entryLinks{
+  display: flex;
+  color: white;
+  align-items: center;
+}
+
+.entryLinks p{
+  font-size: 35px;
+  margin: 0 10px 0 10px;
+}
+
+#arrow{
+  position: absolute;
+  top: 95%;
+  left: 47.5%;
+  width: 5%;
+  height: auto;
+  z-index: 20;
+}
+
 /* SEARCH BAR */
 
 .search {
@@ -276,7 +298,7 @@ a.button1:active, button:active{
 /* ABOUT APP CARDS */
 
 card {
-  width: 98%;
+  width: 100%;
   height: 45vh;
   position: relative;
   padding: 20px;
@@ -284,11 +306,10 @@ card {
   display: flex;
   align-items: center;
   justify-content: left;
-  border: 5px inset var(--secondary);
-  margin-bottom: 20px;
   background-image: url("https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80");
   background-size: cover;
   background-position: center;
+  margin-top: 10px;
 }
 
 card h2 {
@@ -340,15 +361,15 @@ footer{
 }
 
 .searchResult:hover {
-  box-shadow: inset 0 -3px 5px white, 0 7px 15px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 -3px 5px rgba(190, 190, 190, 0.733), 0 7px 15px rgba(0, 0, 0, 0.39);
 }
 
 .searchLink:nth-child(odd) {
-  background-image: linear-gradient(white, rgb(157, 60, 247));
+  background-image: linear-gradient(rgb(34, 112, 40), rgb(23, 51, 21));
 }
 
 .searchLink:nth-child(even) {
-  background-image: linear-gradient(white, rgb(252, 40, 40));
+  background-image: linear-gradient(rgb(158, 120, 62), rgb(112, 63, 34));
 }
 
 .searchWrapper {
