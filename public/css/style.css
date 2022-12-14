@@ -248,6 +248,7 @@ a.button1:active, button:active{
   width: 5%;
   height: auto;
   z-index: 20;
+  fill: #26a86d;
 }
 
 /* SEARCH BAR */
