@@ -472,31 +472,32 @@ footer{
   flex: 0 0 50%;
   max-width: 50%;
   padding: 5px;
-  border: 3px solid var(--dark);
-  border-radius: var(--border-radius);
-  border-style: double;
-  border-width: thick;
-  background-color: rgb(83, 83, 83);
+  border-radius: 7px 7px 7px 7px;
+  background-color: rgb(51, 72, 80);
   color: var(--light);
   text-align: center;
+  font-size: 20px;
   justify-content: space-evenly;
 }
 
 .form-input{
   background: rgba(255,255,255,.5);
   border: none;
+  font-size: 15px ;
   justify-content:center ;
   align-content: center;
+  text-align: center;
+  vertical-align: middle;
   display: flex;
   flex:content;
   justify-self: center;
-  padding: 7px;
+  padding: 10px;
   margin: auto;
   margin-top: 5px;
-  margin-bottom:7px;
+  margin-bottom:15px;
   width: 260px;
   border: none;
-  border-radius: 15px 15px 15px 15px;
+  border-radius: 10px 10px 10px 10px;
 }
 
 .card header {
@@ -738,4 +739,62 @@ h5 {
   font-size: 1.5rem;
   margin: .25rem;
   padding: .25rem;
+}
+
+/* login page */
+#login-card, .card-body {
+  display:flex;
+  flex-direction: column;
+  margin: 0 0 20px 0;
+  max-width: auto;
+  padding: 0px 40px 40px 40px;
+  border-radius: 7px 7px 7px 7px;
+  background-color: rgb(51, 72, 80);
+  color: var(--light);
+  text-align: center;
+  font-size: 20px;
+  justify-content: space-around;
+ 
+}
+.logging{
+  background: rgba(255,255,255,.5);
+  border: none;
+  font-size: 15px ;
+  justify-content:center;
+  align-content: center;
+  display: flex;
+  flex: content;
+  text-align: center;
+  vertical-align: middle;
+  padding: 7px;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom:15px;
+  width: 180px;
+  border: none;
+  border-radius: 10px 10px 10px 10px;
+}
+.login{
+  text-align: center;
+  margin-bottom: 20px;
+  justify-content:flex-start;
+}
+
+.card-body h2,.user{
+  text-align: center;
+  margin-bottom: 20px;
+ 
+}
+
+.user{
+  display:inherit;
+  flex-direction: inherit;
+  background:rgba(33, 29, 29, 0.864);
+  justify-content: inherit;
+  align-content: center;
+  border-radius: 10px 10px 10px 10px;
+  padding:20px;
+}
+.user h4{
+  margin-top: 0;
 }
