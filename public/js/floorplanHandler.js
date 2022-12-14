@@ -53,7 +53,7 @@ const handleSubmit = async (e) => {
     restaurant_id: restaurantID,
     dining_table_id: selectedTable,
     num_guests: Number(slider.value),
-    date_time: '2022-12-15' 
+    date_time: '2022-12-14' 
   }),
     headers: { 'Content-Type': 'application/json' },
   });
