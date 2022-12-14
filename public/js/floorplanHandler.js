@@ -111,7 +111,7 @@ tables.addEventListener("click", (e) => {
     modalForm.setAttribute('style', 'display: none')
 
   // if element selected is a table, open reservation modal
-  } else if (Number(e.target.id) !== NaN ){    
+  } else if (e.target.id <= 60 ){    
     modal.style.display = "block";
     selectedTable = Number(e.target.id);
     reserveMessage.setAttribute('style', 'display: none')
