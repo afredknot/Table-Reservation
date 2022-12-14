@@ -367,7 +367,7 @@ footer{
   border-radius: var(--border-radius);
   border-style: double;
   border-width: thick;
-  background-color: #577a7c;
+  background-color: rgb(83, 83, 83);
   color: var(--light);
   text-align: center;
   justify-content: space-evenly;
@@ -381,10 +381,10 @@ footer{
   display: flex;
   flex:content;
   justify-self: center;
-  padding: auto;
+  padding: 7px;
   margin: auto;
   margin-top: 5px;
-  margin-bottom: 5px;
+  margin-bottom:7px;
   width: 260px;
   border: none;
   border-radius: 15px 15px 15px 15px;
