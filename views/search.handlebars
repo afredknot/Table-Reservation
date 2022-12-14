@@ -1,6 +1,10 @@
 <div>
+    {{#if results}}
     {{#each results as |result|}}
     {{> search-details }}
     {{/each}}
+    {{else}}
+    <h2>{{message}}</h2>
+    {{/if}}
     {{!-- <script src="/js/navmenu.js"></script> --}}
 </div>

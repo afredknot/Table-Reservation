@@ -53,7 +53,7 @@ const reservationdata = [
   {
     restaurant_id: 4,
     user_id: 3,
-    dining_table_id: 40,
+    dining_table_id: 55,
     num_guests: 2,
     date_time: '2022-12-14',
   },
