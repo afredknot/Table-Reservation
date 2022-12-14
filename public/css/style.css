@@ -434,8 +434,21 @@ footer{
   fill: rgba(0, 128, 0, 0.75);
 }
 
+.red {
+  fill: darkred;
+}
+
 .table:hover {
   fill: rgba(0, 128, 0);
+  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.6));
+  cursor: pointer;
+  stroke: black;
+  stroke-width: .5px;
+  stroke-opacity: .4;
+}
+
+.red:hover {
+  fill: darkred;;
   filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.6));
   cursor: pointer;
   stroke: black;
@@ -502,6 +515,7 @@ footer{
   text-align: center;
   font-weight: bold;
 }
+
 .modal {
   display: none; 
   position: fixed; 

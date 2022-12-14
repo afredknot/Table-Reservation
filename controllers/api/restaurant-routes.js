@@ -101,7 +101,7 @@ router.get('/search/:restaurant', async (req, res) => {
       include: [
         {
           model: DiningTable,
-          attributes: ['restaurant_table_ref', 'num_seats'],
+          attributes: ['dining_table_id', 'restaurant_table_ref', 'num_seats'],
         },
         {
           model: Reservation,
