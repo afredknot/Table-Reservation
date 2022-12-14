@@ -296,7 +296,7 @@ a.button1:active, button:active{
   cursor: pointer;
   height: 3vh;
   width: 10%;
-  background-color: green;
+  background-color: rgba(135, 136, 135, 0.582);
   border-radius: 20px;
   z-index: 1;
   margin-right: 10px;
