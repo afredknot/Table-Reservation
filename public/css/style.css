@@ -140,6 +140,10 @@ label input:checked + .menu + ul {
 }
 
 label ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
   z-index: 200;
   position: absolute;
   top: 200%;
@@ -151,6 +155,10 @@ label ul {
   transition: .35s ease-in-out;
   color:white;
   list-style-type: none;
+}
+
+ul li {
+  margin-top: 10px;
 }
 
 nav {
