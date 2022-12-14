@@ -258,6 +258,7 @@ a.button1:active, button:active{
   width: 5%;
   height: auto;
   z-index: 20;
+  fill: #26a86d;
 }
 
 /* SEARCH BAR */
@@ -295,6 +296,7 @@ a.button1:active, button:active{
   height: inherit;
   width: 15px;
   color: white;
+  opacity: .3;
   margin-left: 15px;
   margin-top: 3vh;
   font-size: 16px;
@@ -304,15 +306,21 @@ a.button1:active, button:active{
 
 #searchBtn {
   cursor: pointer;
-  height: 3vh;
+  /* height: 3vh; */
   width: 10%;
   background-color: rgba(135, 136, 135, 0.582);
   border-radius: 20px;
   z-index: 1;
   margin-right: 10px;
   text-align: center;
+  min-width:40px;
 }
 
+}
+#searchBtn p{
+  text-align: center;
+  vertical-align: middle;
+}
 /* ABOUT APP CARDS */
 
 card {
