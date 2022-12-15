@@ -4,6 +4,7 @@ const seedRestaurant = require('./restaurantData');
 const seedUser = require('./userData');
 const seedReservations = require('./reservationsData');
 
+//seed all
 const seedAll = async () => {
   await sequelize.sync({ force: true });
 

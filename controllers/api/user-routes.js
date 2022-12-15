@@ -91,7 +91,6 @@ router.get('/profile', async (req, res) => {
     }
     const user = dbUserData.get({ plain: true });
 
-    // res.status(200).json(dbUserData);
     res.status(200).render('profile', {user, loggedIn: req.session.loggedIn,});
   } catch (err) {
     res.status(500).json(err);
@@ -122,6 +121,7 @@ router.get('/profile/reservations/', async (req, res) => {
   }
 });
 
+//Get All User Data
 router.get('/', async (req, res) => {
   try {
     const userData = await User.findAll();

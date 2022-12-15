@@ -29,15 +29,5 @@ const sequelize = require('sequelize')
     }
   });
 
-// router.get('/', async (req, res) => {
-//     try {
-//       const dbRestaurantData = await Restaurant.findAll()
-  
-  
-//       res.status(200).json(dbRestaurantData);
-//     } catch (err) {
-//       res.status(500).json(err);
-//     }
-//   });
   
 module.exports = router;
