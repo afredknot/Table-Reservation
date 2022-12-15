@@ -39,7 +39,7 @@ function handleSubmit(e) {
             successEl.innerHTML =`Hurray! Your account was created!`;
             return document.location.replace('/');
         } else {
-            errorEl.innerHTML = `Error: Code ${response.status}.`
+            errorEl.innerHTML = `Error: Please use a different email or password.`
         };
     })
 }
