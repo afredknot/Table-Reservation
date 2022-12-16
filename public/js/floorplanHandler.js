@@ -9,11 +9,15 @@ const tableNumber =document.getElementById("table-number")
 const tableQuantity = document.getElementById('table-quantity')
 let title = document.getElementById('restaurant-name')
 
+// get ahold of HTML table elements and stored restaurant ID properties
+let tables = document.querySelector("#svg")
+let restaurant = document.querySelector('.restaurant')
+let restaurantID = restaurant.id;
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
-
+// range element for guest size seslector
 var slider = document.getElementById("myRange");
 var output = document.getElementById("customer_id");
 output.innerHTML = slider.value; 
@@ -36,14 +40,19 @@ window.onclick = function(event) {
   }
 }
 
+// dynamically update the slider display value
 slider.oninput = function() {
   output.innerHTML = this.value;
 }
 
-let tables = document.querySelector("#svg")
-let restaurant = document.querySelector('.restaurant')
-let restaurantID = restaurant.id;
+// make the reservation for tomorrow
+const tomorrow = new Date()
+tomorrow.setDate(tomorrow.getDate() + 1)
+const year = tomorrow.getFullYear()
+const month = tomorrow.getMonth()+1
+const date = tomorrow.getDate()
 
+// Post new reservation
 const handleSubmit = async (e) => {
   e.preventDefault();
 
@@ -53,19 +62,28 @@ const handleSubmit = async (e) => {
     restaurant_id: restaurantID,
     dining_table_id: selectedTable,
     num_guests: Number(slider.value),
-    date_time: '2022-12-14' 
+    date_time: `${year}-${month}-${date} 19:00:00`
   }),
     headers: { 'Content-Type': 'application/json' },
   });
 
   if (response.status == 200) {
-   confirmEl.innerHTML =`Hurray! Your reservation was created!`;
+    // Hide modal
+    modal.style.display = "none";
+    // Display confirmation message
+    confirmEl.innerHTML =`Hurray! Your reservation was created!`;
+    
+    // reload page after 2 seconds so user can see message
+   setTimeout(() => {
     return document.location.reload();
+  }, 2000);
+    
   } else {
     errorEl.innerHTML = `Error: There was no reservation placed.`
   }
 }
 
+// call to query the existing reservations and data about the dining tables
 const getRestaurantInfo = () => {
   fetch(`/api/restaurants/${restaurantID}/data`, {
       method: "GET",
@@ -76,9 +94,11 @@ const getRestaurantInfo = () => {
   })
   
   .then(function (Data) {
-    // append list of tables with existing reservations
+
+    // Display restaurant name
     title.textContent = Data.name
 
+    // append list of tables with existing reservations
     for (i=0; i<Data.reservations.length; i++){
         diningTableResos.push(Data.reservations[i].dining_table_id)
     };
@@ -117,20 +137,22 @@ tables.addEventListener("click", (e) => {
     modalForm.setAttribute('style', 'display: none')
 
   // if element selected is a table, open reservation modal
-  } else if (e.target.id <= 60 ){    
+  } else if (e.target.id <= 60 ){  
+    
+      // dynamically update slider max to table capacity
+      for (i=0; i<restaurantDiningTables.length; i++){ 
+        if (Number(e.target.id) === restaurantDiningTables[i].dining_table_id){
+          slider.setAttribute('max', restaurantDiningTables[i].num_seats)
+          tableNumber.textContent = `Table #${restaurantDiningTables[i].restaurant_table_ref}`
+          tableQuantity.textContent = `This table has a maximum seating capacity of ${restaurantDiningTables[i].num_seats}`
+        };
+    
+    output.innerHTML = slider.value
+    slider.setAttribute('value', this.value)
     modal.style.display = "block";
     selectedTable = Number(e.target.id);
     reserveMessage.setAttribute('style', 'display: none')
     modalForm.setAttribute('style', 'display: block')
-
-    // dynamically update slider max to table capacity
-    for (i=0; i<restaurantDiningTables.length; i++){ 
-      if (Number(e.target.id) === restaurantDiningTables[i].dining_table_id){
-        console.log(restaurantDiningTables[i].dining_table_id)
-        slider.setAttribute('max', restaurantDiningTables[i].num_seats)
-        tableNumber.textContent = `Table #${restaurantDiningTables[i].restaurant_table_ref}`
-        tableQuantity.textContent = `This table has a maximum seating capacity of ${restaurantDiningTables[i].num_seats}`
-      };
     };  
   };
 });
