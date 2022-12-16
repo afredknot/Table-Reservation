@@ -1,3 +1,5 @@
+
+//Call in Sequelize
 const Sequelize = require('sequelize');
 require('dotenv').config();
 
