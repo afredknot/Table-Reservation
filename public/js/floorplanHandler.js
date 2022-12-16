@@ -44,6 +44,14 @@ let tables = document.querySelector("#svg")
 let restaurant = document.querySelector('.restaurant')
 let restaurantID = restaurant.id;
 
+// make the reservation for tomorrow
+const tomorrow = new Date()
+tomorrow.setDate(tomorrow.getDate() + 1)
+const year = tomorrow.getFullYear()
+const month = tomorrow.getMonth()+1
+const date = tomorrow.getDate()
+
+// Post new reservation
 const handleSubmit = async (e) => {
   e.preventDefault();
 
@@ -53,7 +61,7 @@ const handleSubmit = async (e) => {
     restaurant_id: restaurantID,
     dining_table_id: selectedTable,
     num_guests: Number(slider.value),
-    date_time: '2022-12-14' 
+    date_time: `${year}-${month}-${date} 19:00:00`
   }),
     headers: { 'Content-Type': 'application/json' },
   });
@@ -126,7 +134,7 @@ tables.addEventListener("click", (e) => {
     // dynamically update slider max to table capacity
     for (i=0; i<restaurantDiningTables.length; i++){ 
       if (Number(e.target.id) === restaurantDiningTables[i].dining_table_id){
-        console.log(restaurantDiningTables[i].dining_table_id)
+        
         slider.setAttribute('max', restaurantDiningTables[i].num_seats)
         tableNumber.textContent = `Table #${restaurantDiningTables[i].restaurant_table_ref}`
         tableQuantity.textContent = `This table has a maximum seating capacity of ${restaurantDiningTables[i].num_seats}`
