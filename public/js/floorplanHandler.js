@@ -125,20 +125,22 @@ tables.addEventListener("click", (e) => {
     modalForm.setAttribute('style', 'display: none')
 
   // if element selected is a table, open reservation modal
-  } else if (e.target.id <= 60 ){    
+  } else if (e.target.id <= 60 ){  
+    
+      // dynamically update slider max to table capacity
+      for (i=0; i<restaurantDiningTables.length; i++){ 
+        if (Number(e.target.id) === restaurantDiningTables[i].dining_table_id){
+          slider.setAttribute('max', restaurantDiningTables[i].num_seats)
+          tableNumber.textContent = `Table #${restaurantDiningTables[i].restaurant_table_ref}`
+          tableQuantity.textContent = `This table has a maximum seating capacity of ${restaurantDiningTables[i].num_seats}`
+        };
+    
+    output.innerHTML = slider.value
+    slider.setAttribute('value', this.value)
     modal.style.display = "block";
     selectedTable = Number(e.target.id);
     reserveMessage.setAttribute('style', 'display: none')
     modalForm.setAttribute('style', 'display: block')
-
-    // dynamically update slider max to table capacity
-    for (i=0; i<restaurantDiningTables.length; i++){ 
-      if (Number(e.target.id) === restaurantDiningTables[i].dining_table_id){
-        
-        slider.setAttribute('max', restaurantDiningTables[i].num_seats)
-        tableNumber.textContent = `Table #${restaurantDiningTables[i].restaurant_table_ref}`
-        tableQuantity.textContent = `This table has a maximum seating capacity of ${restaurantDiningTables[i].num_seats}`
-      };
     };  
   };
 });
