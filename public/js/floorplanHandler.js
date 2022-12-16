@@ -67,8 +67,13 @@ const handleSubmit = async (e) => {
   });
 
   if (response.status == 200) {
-   confirmEl.innerHTML =`Hurray! Your reservation was created!`;
+    modal.style.display = "none";
+    confirmEl.innerHTML =`Hurray! Your reservation was created!`;
+    
+   setTimeout(() => {
     return document.location.reload();
+  }, 2000);
+    
   } else {
     errorEl.innerHTML = `Error: There was no reservation placed.`
   }
