@@ -9,11 +9,15 @@ const tableNumber =document.getElementById("table-number")
 const tableQuantity = document.getElementById('table-quantity')
 let title = document.getElementById('restaurant-name')
 
+// get ahold of HTML table elements and stored restaurant ID properties
+let tables = document.querySelector("#svg")
+let restaurant = document.querySelector('.restaurant')
+let restaurantID = restaurant.id;
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
-
+// range element for guest size seslector
 var slider = document.getElementById("myRange");
 var output = document.getElementById("customer_id");
 output.innerHTML = slider.value; 
@@ -36,13 +40,10 @@ window.onclick = function(event) {
   }
 }
 
+// dynamically update the slider display value
 slider.oninput = function() {
   output.innerHTML = this.value;
 }
-
-let tables = document.querySelector("#svg")
-let restaurant = document.querySelector('.restaurant')
-let restaurantID = restaurant.id;
 
 // make the reservation for tomorrow
 const tomorrow = new Date()
@@ -67,9 +68,12 @@ const handleSubmit = async (e) => {
   });
 
   if (response.status == 200) {
+    // Hide modal
     modal.style.display = "none";
+    // Display confirmation message
     confirmEl.innerHTML =`Hurray! Your reservation was created!`;
     
+    // reload page after 2 seconds so user can see message
    setTimeout(() => {
     return document.location.reload();
   }, 2000);
@@ -79,6 +83,7 @@ const handleSubmit = async (e) => {
   }
 }
 
+// call to query the existing reservations and data about the dining tables
 const getRestaurantInfo = () => {
   fetch(`/api/restaurants/${restaurantID}/data`, {
       method: "GET",
@@ -89,9 +94,11 @@ const getRestaurantInfo = () => {
   })
   
   .then(function (Data) {
-    // append list of tables with existing reservations
+
+    // Display restaurant name
     title.textContent = Data.name
 
+    // append list of tables with existing reservations
     for (i=0; i<Data.reservations.length; i++){
         diningTableResos.push(Data.reservations[i].dining_table_id)
     };
