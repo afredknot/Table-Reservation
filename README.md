@@ -41,13 +41,13 @@ Follow the about instructions and verify on the user page that a reservation has
 
 ## Contributors
 
-https://github.com/afredknot
+Michael Frabott - FullStack -- https://github.com/mfrabott
 
-https://github.com/tomfallara
+Tom Fallara - BackEnd -- https://github.com/TomFallara
 
-https://github.com/mfrabott
+Nathaniel Fritz - FrontEnd -- https://github.com/Dalidorn
 
-https://github.com/Dalidorn 
+Daniel Nelson - FullStack & DevOps -- https://github.com/afredknot
 
 ## Questions
   
